@@ -65,21 +65,24 @@ ModelImporter:
       - time: 0.37678537
         functionName: OnAimBlowAnimation
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.017421603
         functionName: OnBlowBeganAnimation
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.38767394
         functionName: OnHitAnimation
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2, type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

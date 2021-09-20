@@ -5,9 +5,9 @@ using UnityEngine;
 public class Pitcher : MonoBehaviour
 {
     [SerializeField] private PlayerAnimationEvents _animationEvents;
-    [SerializeField] private GameObject _ballPrefab;
+    [SerializeField] private Ball _ballPrefab;
 
-    public GameObject CurrentBall { get; private set; }
+    public Ball CurrentBall { get; private set; }
 
     private void OnEnable()
     {

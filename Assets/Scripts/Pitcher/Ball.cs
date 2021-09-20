@@ -17,9 +17,19 @@ public class Ball : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    public void Kick(Vector3 direction, float ballisticVelocity, float kickForce)
+    {
+        _rigidbody.velocity = direction * ballisticVelocity * kickForce;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.ApplyDamage();
+            Destroy(gameObject);
+        }
     }
 
     private void OnAnimationEnd()

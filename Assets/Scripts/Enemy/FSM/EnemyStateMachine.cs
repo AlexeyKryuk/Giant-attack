@@ -6,15 +6,18 @@ using UnityEngine;
 public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
+    [SerializeField] private Animator _animator;
 
     private Player _target;
+    private Enemy _enemy;
     private State _currentState;
 
     public State Current => _currentState;
 
     private void Start()
     {
-        _target = GetComponent<Enemy>().Target;
+        _enemy = GetComponent<Enemy>();
+        _target = _enemy.Target;
         Reset(_firstState);
     }
 
@@ -34,7 +37,7 @@ public class EnemyStateMachine : MonoBehaviour
         _currentState = startState;
 
         if (_currentState != null)
-            _currentState.Enter(_target);
+            _currentState.Enter(_target, _animator, _enemy);
     }
 
     private void Transit(State nextState)
@@ -45,6 +48,6 @@ public class EnemyStateMachine : MonoBehaviour
         _currentState = nextState;
 
         if (_currentState != null)
-            _currentState.Enter(_target);
+            _currentState.Enter(_target, _animator, _enemy);
     }
 }

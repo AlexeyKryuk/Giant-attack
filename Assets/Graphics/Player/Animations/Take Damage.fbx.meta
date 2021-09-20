@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: efd24ee762811504186db7d27a90bd33
+guid: e67ade21543c174488e1d84ec91dc931
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Baseball Strike (4)
+    second: mixamo.com
   - first:
-      74: -467147912938293058
-    second: Baseball Strike
+      74: 6189728761633685162
+    second: Take Damage
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Baseball Strike
+      name: Take Damage
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 57
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -61,31 +61,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.37678537
-        functionName: OnAimBlowAnimation
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.017421603
-        functionName: OnBlowBeganAnimation
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.38767394
-        functionName: OnHitAnimation
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 8fce6c2faa2e404458bafa87c5454db2,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

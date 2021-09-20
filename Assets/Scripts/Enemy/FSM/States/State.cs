@@ -5,12 +5,12 @@ using UnityEngine;
 public class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
-    [SerializeField] private Animator _animator;
 
     protected Player Target { get; set; }
+    protected Animator Animator { get; private set; }
+    protected Enemy Enemy { get; private set; }
 
     public List<Transition> Transitions { get => _transitions; private set => _transitions = value; }
-    public Animator Animator { get => _animator; private set => _animator = value; }
 
     protected virtual void OnEnable()
     {
@@ -24,17 +24,19 @@ public class State : MonoBehaviour
             Target.Died -= OnTargetDie;
     }
 
-    public void Enter(Player target)
+    public void Enter(Player target, Animator animator, Enemy enemy)
     {
         if (enabled == false)
         {
             Target = target;
+            Animator = animator;
+            Enemy = enemy;
             enabled = true;
 
             foreach (var transition in Transitions)
             {
                 transition.enabled = true;
-                transition.Init(target);
+                transition.Init(target, animator);
             }
         }
     }
@@ -63,7 +65,6 @@ public class State : MonoBehaviour
 
     protected void OnTargetDie()
     {
-        Target.Died -= OnTargetDie;
         Target = null;
     }
 }

@@ -12,8 +12,10 @@ public class Strafe : MonoBehaviour
     private Vector3 _direction;
     private Vector3 _targetPosition;
     private bool _isStrafing;
-    private Side _side = Side.Middle;
+    private Side _currentSide = Side.Middle;
     private Coroutine _coroutine;
+
+    public Side CurrentSide => _currentSide;
 
     private void OnEnable()
     {
@@ -47,12 +49,12 @@ public class Strafe : MonoBehaviour
     {
         if (!_isStrafing && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            if (_side != side)
+            if (_currentSide != side)
             {
                 if (side == Side.Left)
-                    _side--;
+                    _currentSide--;
                 else if (side == Side.Right)
-                    _side++;
+                    _currentSide++;
 
                 _animator.SetTrigger(nameof(Strafe));
 

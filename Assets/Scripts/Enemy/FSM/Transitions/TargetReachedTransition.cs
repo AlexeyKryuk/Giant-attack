@@ -8,7 +8,6 @@ public class TargetReachedTransition : Transition
 
     private void Update()
     {
-        //Debug.Log(Target);
         float distance = Vector3.Distance(Target.transform.position, transform.position);
 
         if (distance < _range)

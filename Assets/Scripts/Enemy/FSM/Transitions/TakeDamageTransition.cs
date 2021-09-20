@@ -6,6 +6,7 @@ using UnityEngine;
 public class TakeDamageTransition : Transition
 {
     private Enemy _enemy;
+    private Coroutine _coroutine;
 
     private void Awake()
     {
@@ -25,6 +26,14 @@ public class TakeDamageTransition : Transition
 
     private void OnTakeDamage()
     {
+        if (_coroutine == null)
+            _coroutine = StartCoroutine(DelayBeforeTransit());
+    }
+
+    private IEnumerator DelayBeforeTransit()
+    {
+        float animationLength = Animator.GetCurrentAnimatorClipInfo(0).Length - 0.2f;
+        yield return new WaitForSeconds(animationLength);
         NeedTransit = true;
     }
 }

@@ -7,6 +7,5 @@ public class IdleState : State
     protected override void OnEnable()
     {
         base.OnEnable();
-        Animator.SetBool("Move", false);
     }
 }

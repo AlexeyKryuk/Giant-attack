@@ -27,7 +27,7 @@ public class Aiming : MonoBehaviour
         RaycastHit hit;
         Ray ray = _camera.ScreenPointToRay(_twistingAim.Crosshair.position);
 
-        if (Physics.SphereCast(ray, 1f, out hit, 1000f, _layerMask))
+        if (Physics.Raycast(ray, out hit, 1000f, _layerMask))
             Target = hit.point;
     }
 

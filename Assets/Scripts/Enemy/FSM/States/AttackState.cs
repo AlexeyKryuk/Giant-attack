@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    [SerializeField] private Strafe _strafe;
+    [SerializeField] private Strafing _strafe;
     [SerializeField] private int _damage;
     [SerializeField] private float _cooldown;
 
@@ -31,7 +31,7 @@ public class AttackState : State
 
     private void OnAttack()
     {
-        if (_strafe.CurrentSide == Side.Middle)
+        if (_strafe.CurrentSide == Side.Middle && Target != null)
             Target.ApplyDamage(_damage);
     }
 }

@@ -2,29 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Strafe : MonoBehaviour
+public class Strafing : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private float _distance;
     [SerializeField] private float _smoothness;
 
-    private Vector3 _direction;
     private Vector3 _targetPosition;
-    private bool _isStrafing;
     private Side _currentSide = Side.Middle;
-    private Coroutine _coroutine;
+    private bool _isStrafing;
 
     public Side CurrentSide => _currentSide;
 
     private void OnEnable()
     {
-        _swipeDetection.Swiped += OnSwipe;
+        _swipeDetection.Swiped += Strafe;
     }
 
     private void OnDisable()
     {
-        _swipeDetection.Swiped -= OnSwipe;
+        _swipeDetection.Swiped -= Strafe;
     }
 
     private void Start()
@@ -41,26 +39,42 @@ public class Strafe : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _smoothness * Time.deltaTime);
-            _isStrafing = true;
         }
     }
 
-    private void OnSwipe(Side side)
+    private void Strafe(Side side)
     {
-        if (!_isStrafing && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (!_isStrafing)
         {
             if (_currentSide != side)
             {
+                _isStrafing = true;
+
                 if (side == Side.Left)
                     _currentSide--;
                 else if (side == Side.Right)
                     _currentSide++;
 
-                _animator.SetTrigger(nameof(Strafe));
 
-                _direction = new Vector3((float)side * _distance, 0f, 0f);
-                _targetPosition = transform.position + _direction;
+                _animator.SetTrigger("Strafe");
+
+                Vector3 direction = new Vector3((float)side * _distance, 0f, 0f);
+                _targetPosition = transform.position + direction;
+
+                StartCoroutine(GoBack(_currentSide));
             }
         }
+    }
+
+    private IEnumerator GoBack(Side sideFrom)
+    {
+        yield return new WaitUntil(() => !_isStrafing);
+
+        if (sideFrom == Side.Left)
+            Strafe(Side.Right);
+        else if (sideFrom == Side.Right)
+            Strafe(Side.Left);
+        else
+            yield return null;
     }
 }

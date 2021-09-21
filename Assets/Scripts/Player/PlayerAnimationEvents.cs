@@ -8,6 +8,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     public UnityAction AimBlowEvent;
     public UnityAction BlowBeganEvent;
     public UnityAction HitEvent;
+    public UnityAction HitEndEvent;
 
     private void OnAimBlowAnimation()
     {
@@ -22,5 +23,10 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void OnHitAnimation()
     {
         HitEvent?.Invoke();
+    }
+
+    private void OnHittingEnd()
+    {
+        HitEndEvent?.Invoke();
     }
 }

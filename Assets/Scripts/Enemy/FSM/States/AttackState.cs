@@ -14,6 +14,13 @@ public class AttackState : State
     {
         base.OnEnable();
         _currentTime = _cooldown;
+        Enemy.Damaged += OnTakeDamage;
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        Enemy.Damaged -= OnTakeDamage;
     }
 
     private void Update()
@@ -33,5 +40,10 @@ public class AttackState : State
     {
         if (_strafe.CurrentSide == Side.Middle && Target != null)
             Target.ApplyDamage(_damage);
+    }
+
+    private void OnTakeDamage()
+    {
+        _currentTime = _cooldown;
     }
 }

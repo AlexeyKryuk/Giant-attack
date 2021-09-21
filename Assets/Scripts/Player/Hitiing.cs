@@ -6,15 +6,20 @@ using UnityEngine;
 public class Hitiing : MonoBehaviour
 {
     [SerializeField] private PlayerAnimationEvents _animationEvents;
-    [SerializeField] private TouchDetection _touchDetection;
     [SerializeField] private Pitcher _pitcher;
     [SerializeField] private Aiming _aiming;
+    [SerializeField] private Strafing _strafing;
     [Space]
     [SerializeField] private float _angleInDegrees;
     [SerializeField] private float _kickForce;
+    [SerializeField] private float _cooldown;
 
+    private bool _isHitting;
+    private float _currentTime;
     private Ball _cuurentBall;
     private Animator _animator;
+
+    public bool IsHitting => _isHitting;
 
     private void Awake()
     {
@@ -23,22 +28,36 @@ public class Hitiing : MonoBehaviour
 
     private void OnEnable()
     {
+        _currentTime = _cooldown;
         _animationEvents.HitEvent += OnHit;
-        _touchDetection.Touched += OnTouch;
+        _animationEvents.HitEndEvent += OnHitEnd;
     }
 
     private void OnDisable()
     {
         _animationEvents.HitEvent -= OnHit;
-        _touchDetection.Touched -= OnTouch;
+        _animationEvents.HitEndEvent -= OnHitEnd;
     }
 
-    private void OnTouch()
+    private void Update()
     {
-        if (Time.timeScale > 0)
+        if (_currentTime >= _cooldown && !_strafing.IsStrafing && !_isHitting)
         {
-            _animator.SetTrigger("Hit");
+            if (Time.timeScale > 0)
+            {
+                _isHitting = true;
+                _animator.SetTrigger("Hit");
+            }
+
+            _currentTime = 0;
         }
+
+        _currentTime += Time.deltaTime;
+    }
+
+    private void OnHitEnd()
+    {
+        _isHitting = false;
     }
 
     public void OnHit()

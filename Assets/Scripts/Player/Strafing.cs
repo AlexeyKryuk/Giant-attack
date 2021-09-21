@@ -5,6 +5,7 @@ using UnityEngine;
 public class Strafing : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private Hitiing _hitting;
     [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private float _distance;
     [SerializeField] private float _smoothness;
@@ -14,6 +15,7 @@ public class Strafing : MonoBehaviour
     private bool _isStrafing;
 
     public Side CurrentSide => _currentSide;
+    public bool IsStrafing => _isStrafing;
 
     private void OnEnable()
     {
@@ -44,7 +46,7 @@ public class Strafing : MonoBehaviour
 
     private void Strafe(Side side)
     {
-        if (!_isStrafing)
+        if (!_isStrafing && !_hitting.IsHitting)
         {
             if (_currentSide != side)
             {

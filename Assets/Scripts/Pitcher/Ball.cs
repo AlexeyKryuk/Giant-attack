@@ -3,33 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private Flying _flyingBall;
+    [SerializeField] private HitEffect _hitEffect;
 
     private Animator _animator;
-    private Rigidbody _rigidbody;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void Kick(Vector3 direction, float ballisticVelocity, float kickForce)
+    public void Kick(Vector3 target)
     {
-        _rigidbody.velocity = direction * ballisticVelocity * kickForce;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Enemy enemy = collision.gameObject.GetComponentInParent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.ApplyDamage();
-            Destroy(gameObject);
-        }
+        _flyingBall.enabled = true;
+        _hitEffect.enabled = true;
+        _flyingBall.SetTarget(target);
+        _hitEffect.SetTarget(target);
     }
 
     private void OnAnimationEnd()

@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 3872672442931998208}
   - component: {fileID: 7540684380435302109}
   - component: {fileID: 257544255942534270}
-  - component: {fileID: 1623859621912798055}
   - component: {fileID: -3335305417242419612}
+  - component: {fileID: 8366869916435046683}
+  - component: {fileID: -1189716795783154276}
+  - component: {fileID: 3255598271765230649}
   m_Layer: 0
   m_Name: Ball Baseball C
   m_TagString: Untagged
@@ -32,7 +34,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_Children: []
+  m_Children:
+  - {fileID: 4830391365893112323}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117,22 +120,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2000524
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1623859621912798055
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3368274027088465877}
-  serializedVersion: 2
-  m_Mass: 0.4
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &-3335305417242419612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +132,123 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac51f88165e930a4196c9c91224ac02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 8
+  _flyingBall: {fileID: 8366869916435046683}
+  _hitEffect: {fileID: -1189716795783154276}
+--- !u!114 &8366869916435046683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368274027088465877}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41fa746489dadb499ee5d9d257463d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
+--- !u!114 &-1189716795783154276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368274027088465877}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbc3076f69acce48bf45adbc32fe970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffectPrefab: {fileID: 6266602815319188685, guid: 465f0c5cc61ad6d4c986e3b49d44991c,
+    type: 3}
+--- !u!54 &3255598271765230649
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368274027088465877}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!1001 &6770341169835371320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2735184489175586159}
+    m_Modifications:
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144333805, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Name
+      value: CartoonFireTrail Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 256473674ce1cde43aee6149549b723d, type: 3}
+--- !u!4 &4830391365893112323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6770341169835371320}
+  m_PrefabAsset: {fileID: 0}

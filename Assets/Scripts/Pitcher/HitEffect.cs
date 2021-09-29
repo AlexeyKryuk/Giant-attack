@@ -7,9 +7,14 @@ public class HitEffect : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffectPrefab;
 
     private Vector3 _target;
+    private bool _isHit;
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (_isHit)
+            return;
+
+        _isHit = true;
         Enemy enemy = collision.collider.GetComponentInParent<Enemy>();
 
         if (enemy != null)

@@ -1854,13 +1854,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0.8476213, z: -0, w: 0.5306016}
-  m_LocalPosition: {x: 3.79, y: 2.86, z: 1.84}
+  m_LocalRotation: {x: -0.0534594, y: -0.84330827, z: -0.0853999, w: 0.5279017}
+  m_LocalPosition: {x: 5.108305, y: 1.2900001, z: 2.4765742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8801726746465072803}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.565, y: -170, z: 0}
 --- !u!1 &972009663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2548,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   _animationEvents: {fileID: 8173421425049906203}
+  _crosshair: {fileID: 1709214859}
   _twistingAim: {fileID: 1258871735}
 --- !u!114 &1258871735
 MonoBehaviour:
@@ -2562,10 +2563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _touchDetection: {fileID: 470921357}
-  _horizontal: {fileID: 504972784}
-  _vertical: {fileID: 349146551}
   _crosshair: {fileID: 1709214859}
   _speed: 1
+  _horizontal: {fileID: 504972784}
+  _vertical: {fileID: 349146551}
 --- !u!4 &1302188042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4651004047261525691, guid: 8419b2d3ab7a41c69a2766ae93994ea7,
@@ -3123,7 +3124,7 @@ Transform:
   m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.20000002}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1818635232
 MonoBehaviour:
@@ -3140,6 +3141,7 @@ MonoBehaviour:
   _animationEvents: {fileID: 8173421425049906203}
   _ballPrefab: {fileID: -3335305417242419612, guid: a42c30d75976f784c863e72ce4c21244,
     type: 3}
+  _startBall: {fileID: 0}
 --- !u!1 &1863717722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,7 +4817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3728eb59dcab7ca469fb68e4a22ff1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetState: {fileID: 3808092969642365232}
+  _targetState: {fileID: 3808092969642365228}
 --- !u!1 &3808092969642365231
 GameObject:
   m_ObjectHideFlags: 0
@@ -6709,7 +6711,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 5108a7df5817a5a42a6b0c8a811fb5dd, type: 3}
   m_Controller: {fileID: 9100000, guid: 608ad740efd0d3f4c9f5edc590a56b08, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 2
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -7398,7 +7400,6 @@ GameObject:
   - component: {fileID: 8173421425049906206}
   - component: {fileID: 8173421425049906203}
   - component: {fileID: 8173421425049906205}
-  - component: {fileID: 8173421425049906207}
   - component: {fileID: 8173421425049906204}
   m_Layer: 0
   m_Name: Player
@@ -7447,14 +7448,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8173421425049906201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4582f765348fde842a54d4d46d9d3801, type: 3}
+  m_Script: {fileID: 11500000, guid: 9819068506dab034f8bfe3e1e1096fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _animationEvents: {fileID: 8173421425049906203}
   _pitcher: {fileID: 1818635232}
   _aiming: {fileID: 1258871734}
+  _cooldown: 3
   _strafing: {fileID: 8173421425049906205}
-  _cooldown: 5
 --- !u!114 &8173421425049906205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7462,7 +7463,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8173421425049906201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dd994542f231734da6f1f60edb4da90, type: 3}
   m_Name: 
@@ -7486,26 +7487,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8173421425049906202}
   _strafing: {fileID: 8173421425049906205}
-  _hitting: {fileID: 0}
-  _health: 3
---- !u!114 &8173421425049906207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8173421425049906201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec3107e5fc0eb146b7aa605ad35d0e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 963194227}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 72
-  _animationEvents: {fileID: 8173421425049906203}
-  _twistingAim: {fileID: 1258871735}
+  _hitting: {fileID: 8173421425049906204}
+  _health: 1
 --- !u!1 &8362868948678151207
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,7 +7610,7 @@ Transform:
   - {fileID: 1159628882379740071}
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 115.908, z: 0}
 --- !u!4 &9178555491615674587
 Transform:

@@ -8,10 +8,12 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Player _target;
+    [SerializeField] private int _health;
 
     private Animator _animator;
 
-    public Player Target { get => _target; private set => _target = value; }
+    public Player Target => _target;
+    public int Health => _health;
 
     public UnityAction Damaged;
 
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour
 
     public void ApplyDamage()
     {
+        _health--;
         _animator.SetTrigger("Damage");
         Damaged?.Invoke();
     }

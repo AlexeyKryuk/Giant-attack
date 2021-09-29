@@ -17,9 +17,13 @@ public class Ball : MonoBehaviour
 
     public void Kick(Vector3 target)
     {
-        _flyingBall.enabled = true;
+        if (_flyingBall != null)
+        {
+            _flyingBall.enabled = true;
+            _flyingBall.SetTarget(target);
+        }
+
         _hitEffect.enabled = true;
-        _flyingBall.SetTarget(target);
         _hitEffect.SetTarget(target);
     }
 

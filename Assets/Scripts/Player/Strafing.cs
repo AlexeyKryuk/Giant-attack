@@ -5,7 +5,7 @@ using UnityEngine;
 public class Strafing : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private Hitiing _hitting;
+    [SerializeField] private Hitting _hitting;
     [SerializeField] private SwipeDetection _swipeDetection;
     [SerializeField] private float _distance;
     [SerializeField] private float _smoothness;

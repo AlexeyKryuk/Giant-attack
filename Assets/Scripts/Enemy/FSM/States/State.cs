@@ -35,8 +35,8 @@ public class State : MonoBehaviour
 
             foreach (var transition in Transitions)
             {
+                transition.Init(target, animator, enemy);
                 transition.enabled = true;
-                transition.Init(target, animator);
             }
         }
     }

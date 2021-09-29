@@ -8,13 +8,19 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Strafing _strafing;
-    [SerializeField] private Hitiing _hitting;
+    [SerializeField] private Hitting _hitting;
     [SerializeField] private int _health;
 
     public int Health => _health;
 
     public UnityAction Died;
     public UnityAction Damaged;
+
+    public void OnEnemyDie()
+    {
+        _strafing.enabled = false;
+        _hitting.enabled = false;
+    }
 
     public void ApplyDamage(int amount)
     {

@@ -9,15 +9,17 @@ public class Transition : MonoBehaviour
 
     public Player Target { get; private set; }
     public Animator Animator { get; private set; }
+    public Enemy Enemy { get; private set; }
 
     public State TargetState => _targetState;
 
     public bool NeedTransit { get; protected set; }
 
-    public void Init(Player target, Animator animator)
+    public void Init(Player target, Animator animator, Enemy enemy)
     {
         Target = target;
         Animator = animator;
+        Enemy = enemy;
     }
 
     protected virtual void OnEnable()

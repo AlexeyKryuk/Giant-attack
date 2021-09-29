@@ -25,7 +25,7 @@ public class PlayerAnimationEvents : MonoBehaviour
         HitEvent?.Invoke();
     }
 
-    private void OnHittingEnd()
+    private void OnHitEndAnimation()
     {
         HitEndEvent?.Invoke();
     }

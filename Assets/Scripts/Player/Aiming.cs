@@ -1,38 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Aiming : MonoBehaviour
+public abstract class Aiming : MonoBehaviour
 {
-    [SerializeField] private PlayerAnimationEvents _animationEvents;
     [SerializeField] private Camera _camera;
-    [SerializeField] private TwistingAim _twistingAim;
     [SerializeField] private LayerMask _layerMask;
 
-    public Vector3 Target { get; private set; }
-
-    private void OnEnable()
-    {
-        _animationEvents.AimBlowEvent += OnAimBlow;
-    }
-
-    private void OnDisable()
-    {
-        _animationEvents.AimBlowEvent -= OnAimBlow;
-    }
+    public Vector3 Target { get; protected set; }
+    public Camera Camera => _camera;
+    public LayerMask LayerMask => _layerMask;
 
     private void Update()
     {
-        RaycastHit hit;
-        Ray ray = _camera.ScreenPointToRay(_twistingAim.Crosshair.position);
-
-        if (Physics.Raycast(ray, out hit, 1000f, _layerMask))
-            Target = hit.point;
+        CalculateTarget();
     }
 
-    public void OnAimBlow()
-    {
-        _twistingAim.enabled = true;
-    }
+    protected abstract void CalculateTarget();
 }

@@ -36,7 +36,7 @@ public class ChaseState : State
         Vector2 currentPos = new Vector2(transform.position.x, transform.position.z);
         Vector2 targetPos = new Vector2(transform.position.x, target.z);
 
-        Vector2 vector2Pos = Vector2.MoveTowards(currentPos, targetPos, speed * Time.deltaTime);
+        Vector2 vector2Pos = Vector2.MoveTowards(currentPos, targetPos, speed * Time.unscaledDeltaTime);
 
         Vector3 newPos = new Vector3(vector2Pos.x, transform.position.y, vector2Pos.y);
         transform.position = newPos;

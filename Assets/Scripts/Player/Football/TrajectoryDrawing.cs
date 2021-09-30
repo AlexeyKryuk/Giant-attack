@@ -8,7 +8,7 @@ public class TrajectoryDrawing : MonoBehaviour
     [SerializeField] private  GameObject _crosshair;
 
     private List<Transform> _poolOfSphere = new List<Transform>();
-    private int _numberOfSpheres = 100;
+    private int _numberOfSpheres = 200;
 
     private void Awake()
     {

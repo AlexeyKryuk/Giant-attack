@@ -11,8 +11,10 @@ public class DeathState : State
         base.OnEnable();
 
         _rayfire.Demolish();
+
         if (Target != null)
             Target.OnEnemyDie();
-        Destroy(gameObject);
+
+        Destroy(gameObject, 1f);
     }
 }

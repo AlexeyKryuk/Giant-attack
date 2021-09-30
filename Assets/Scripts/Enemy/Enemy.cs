@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public int Health => _health;
 
     public UnityAction Damaged;
+    public UnityAction Died;
 
     private void Awake()
     {
@@ -27,5 +28,8 @@ public class Enemy : MonoBehaviour
         _health--;
         _animator.SetTrigger("Damage");
         Damaged?.Invoke();
+
+        if (_health <= 0)
+            Died?.Invoke();
     }
 }

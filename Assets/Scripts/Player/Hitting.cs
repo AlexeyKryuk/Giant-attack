@@ -14,13 +14,13 @@ public abstract class Hitting : MonoBehaviour
 
     public bool IsHitting => _isHitting;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _animationEvents.HitEvent += OnHit;
         _animationEvents.HitEndEvent += OnHitEnd;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         _animationEvents.HitEvent -= OnHit;
         _animationEvents.HitEndEvent -= OnHitEnd;

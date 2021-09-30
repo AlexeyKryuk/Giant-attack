@@ -13,6 +13,7 @@ public class BaseballHitting : Hitting
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _currentTime = _cooldown;
     }
 
     private void Start()
@@ -28,9 +29,8 @@ public class BaseballHitting : Hitting
             {
                 _isHitting = true;
                 _animator.SetTrigger("Hit");
+                _currentTime = 0;
             }
-
-            _currentTime = 0;
         }
 
         _currentTime += Time.deltaTime;

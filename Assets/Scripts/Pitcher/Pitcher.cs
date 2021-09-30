@@ -6,14 +6,16 @@ public class Pitcher : MonoBehaviour
 {
     [SerializeField] private PlayerAnimationEvents _animationEvents;
     [SerializeField] private Ball _ballPrefab;
-    [SerializeField] private Ball _startBall;
+    [SerializeField] private bool _needStartBall;
 
     public Ball CurrentBall { get; private set; }
 
     private void OnEnable()
     {
+        if (_needStartBall)
+            KickOff();
+
         _animationEvents.BlowBeganEvent += KickOff;
-        CurrentBall = _startBall;
     }
 
     private void OnDisable()

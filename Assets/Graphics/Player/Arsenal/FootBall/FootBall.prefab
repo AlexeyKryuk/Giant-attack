@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8766448393080280267}
   - component: {fileID: 8766448393080280264}
   - component: {fileID: 8766448393080280266}
-  m_Layer: 0
+  - component: {fileID: 3590100893404008297}
+  m_Layer: 10
   m_Name: FootBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +33,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.39999995, y: 0.39999998, z: 0.39999995}
-  m_Children: []
+  m_Children:
+  - {fileID: 1187346945484733885}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -143,5 +145,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbc3076f69acce48bf45adbc32fe970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 4261674251012813930, guid: 1d34fc9154e27a44dae5b4e658bfde97,
+  _hitEffectPrefab: {fileID: 2015091145419659825, guid: 1d34fc9154e27a44dae5b4e658bfde97,
     type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!54 &3590100893404008297
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766448393080280272}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!1001 &1046990117833675910
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8766448393080280268}
+    m_Modifications:
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144320431, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144333805, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Name
+      value: CartoonFireTrail Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144333805, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144419737, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510163464245, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: useRigidbodyForVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 256473674ce1cde43aee6149549b723d, type: 3}
+--- !u!4 &1187346945484733885 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2233198510144039227, guid: 256473674ce1cde43aee6149549b723d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1046990117833675910}
+  m_PrefabAsset: {fileID: 0}

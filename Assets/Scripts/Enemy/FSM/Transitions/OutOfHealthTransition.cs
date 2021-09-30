@@ -7,17 +7,16 @@ public class OutOfHealthTransition : Transition
     protected override void OnEnable()
     {
         base.OnEnable();
-        Enemy.Damaged += OnDamaged;
+        Enemy.Died += OnDie;
     }
 
     private void OnDisable()
     {
-        Enemy.Damaged -= OnDamaged;
+        Enemy.Died -= OnDie;
     }
 
-    private void OnDamaged()
+    private void OnDie()
     {
-        if (Enemy.Health <= 0)
-            NeedTransit = true;
+        NeedTransit = true;
     }
 }

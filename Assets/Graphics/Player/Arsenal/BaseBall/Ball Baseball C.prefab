@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3368274027088465877}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4830391365893112323}
@@ -159,8 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbc3076f69acce48bf45adbc32fe970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 4261674251012813930, guid: 1d34fc9154e27a44dae5b4e658bfde97,
+  _hitEffectPrefab: {fileID: 2015091145419659825, guid: 1d34fc9154e27a44dae5b4e658bfde97,
     type: 3}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &3255598271765230649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -243,6 +246,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CartoonFireTrail Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510163406497, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510163406497, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510163464245, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510163464245, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: useRigidbodyForVelocity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 256473674ce1cde43aee6149549b723d, type: 3}

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public void ApplyDamage(int amount)
     {
-        if (_health > 0 && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if (_health > 0)
         {
             _health -= amount;
             if (_health <= 0)

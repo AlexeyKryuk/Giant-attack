@@ -5,6 +5,7 @@ using UnityEngine;
 public class FootballHitting : Hitting
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private InputDetection _input;
     [SerializeField] private TrajectoryDrawing _trajectory;
     [SerializeField] private Transform _projectoryBall;
 
@@ -15,36 +16,57 @@ public class FootballHitting : Hitting
     private List<Vector3> _projectPoints = new List<Vector3>();
     private Vector3 _currentMousePos = Vector3.zero;
 
-    private void LateUpdate()
+    protected override void OnEnable()
     {
-        if (Input.GetMouseButtonDown(0))
+        base.OnEnable();
+        _input.TouchBegan += OnTouchBegan;
+        _input.TouchCancled += OnTouchCanceled;
+        _input.TouchMoved += OnTouchMoved;
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        _input.TouchBegan -= OnTouchBegan;
+        _input.TouchCancled -= OnTouchCanceled;
+        _input.TouchMoved -= OnTouchMoved;
+    }
+
+    private void OnTouchBegan()
+    {
+        if (Time.timeScale > 0)
         {
             StartCoroutine(SimulateProjectile(true));
         }
+    }
 
-        if (Input.GetMouseButton(0))
+    private void OnTouchCanceled()
+    {
+        if (Time.timeScale > 0)
+        {
+            _trajectory.ResetPoints();
+
+            if (!_isHitting)
+                _animator.SetTrigger("Kick");
+        }
+    }
+
+    private void OnTouchMoved()
+    {
+        if (Time.timeScale > 0)
         {
             if (Vector3.Distance(_currentMousePos, Input.mousePosition) > 0)
                 StartCoroutine(SimulateProjectile(true));
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            _trajectory.ResetPoints();
+            _currentMousePos = Input.mousePosition;
         }
-
-        if (Input.GetMouseButtonUp(0) && !_isHitting)
-        {
-            _animator.SetTrigger("Kick");
-        }
-
-        _currentMousePos = Input.mousePosition;
     }
 
     protected override void OnHit()
     {
         _isHitting = true;
         _cuurentBall = _pitcher.CurrentBall;
+        Debug.Log("Kick");
         _cuurentBall.Kick(_aiming.Target);
 
         StartCoroutine(SimulateProjectile(false));
@@ -67,20 +89,14 @@ public class FootballHitting : Hitting
 
         _trajectory.ResetPoints();
 
-        // Calculate distance to target
         float target_Distance = Vector3.Distance(projectile.position, _aiming.Target);
-
-        // Calculate the velocity needed to throw the object to the target at specified angle.
         float projectile_Velocity = target_Distance / (Mathf.Sin(2 * _firingAngle * Mathf.Deg2Rad) / _gravity);
 
-        // Extract the X  Y componenent of the velocity
         float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(_firingAngle * Mathf.Deg2Rad);
         float Vy = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(_firingAngle * Mathf.Deg2Rad);
 
-        // Calculate flight time.
         float flightDuration = target_Distance / Vx;
 
-        // Rotate projectile to face the target.
         projectile.rotation = Quaternion.LookRotation(_aiming.Target - projectile.position);
 
         float elapse_time = 0;
@@ -99,9 +115,7 @@ public class FootballHitting : Hitting
             while (elapse_time < flightDuration)
             {
                 if (projectile == null)
-                {
                     yield break;
-                }
 
                 _points.Add(new Vector3(0, (Vy - (_gravity * elapse_time)) * Time.deltaTime, Vx * Time.deltaTime));
                 projectile.Translate(_points[_points.Count - 1]);

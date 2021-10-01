@@ -6,15 +6,28 @@ public class DeathState : State
 {
     [SerializeField] private RayFire.RayfireRigid _rayfire;
 
+    private Collider[] _colliders;
+
+    private void Awake()
+    {
+        _colliders = GetComponentsInChildren<Collider>();
+    }
+
     protected override void OnEnable()
     {
         base.OnEnable();
 
+        DisableColliders();
         _rayfire.Demolish();
 
-        if (Target != null)
-            Target.OnEnemyDie();
-
         Destroy(gameObject, 1f);
+    }
+
+    private void DisableColliders()
+    {
+        foreach (var collider in _colliders)
+        {
+            collider.enabled = false;
+        }
     }
 }

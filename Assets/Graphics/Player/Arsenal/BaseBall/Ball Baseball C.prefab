@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8366869916435046683}
   - component: {fileID: -1189716795783154276}
   - component: {fileID: 3255598271765230649}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ball Baseball C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,10 +242,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144320431, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2233198510144333805, guid: 256473674ce1cde43aee6149549b723d,
         type: 3}
       propertyPath: m_Name
       value: CartoonFireTrail Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144333805, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233198510144419737, guid: 256473674ce1cde43aee6149549b723d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2233198510163406497, guid: 256473674ce1cde43aee6149549b723d,
         type: 3}

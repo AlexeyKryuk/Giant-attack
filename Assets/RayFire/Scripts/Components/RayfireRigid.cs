@@ -695,10 +695,10 @@ namespace RayFire
 
             // Timestamp
             float t1 = Time.realtimeSinceStartup;
-            
-            // Restore position and rotation to prevent high collision offset
-            transForm.position = physics.position;
-            transForm.rotation = physics.rotation;
+
+            //// Restore position and rotation to prevent high collision offset
+            //transForm.position = physics.position;
+            //transForm.rotation = physics.rotation;
 
             // Demolish mesh or cluster to reference
             if (RFReferenceDemolition.DemolishReference(this) == false)

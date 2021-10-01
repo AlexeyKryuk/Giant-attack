@@ -15,7 +15,7 @@ public class OutOfHealthTransition : Transition
         Enemy.Died -= OnDie;
     }
 
-    private void OnDie()
+    private void OnDie(Enemy enemy)
     {
         NeedTransit = true;
     }

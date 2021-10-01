@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public int Health => _health;
 
     public UnityAction Damaged;
-    public UnityAction Died;
+    public UnityAction <Enemy>Died;
 
     private void Awake()
     {
@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
         Damaged?.Invoke();
 
         if (_health <= 0)
-            Died?.Invoke();
+        {
+            Died?.Invoke(this);
+
+            if (Target != null)
+                Target.OnEnemyDie(this);
+        }
     }
 }

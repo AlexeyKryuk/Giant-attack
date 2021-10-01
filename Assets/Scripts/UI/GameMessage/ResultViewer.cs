@@ -22,7 +22,7 @@ public class ResultViewer : MonoBehaviour
     {
         _grey = _background.color;
         _player.Died += OnPlayerDie;
-        _enemy.Died += OnEnemyDie;
+        _player.AllEnemyDied += OnEnemyDie;
     }
 
     private void OnDisable()
@@ -30,7 +30,7 @@ public class ResultViewer : MonoBehaviour
         _grey.a = 0f;
         _background.color = _grey;
         _player.Died -= OnPlayerDie;
-        _enemy.Died -= OnEnemyDie;
+        _player.AllEnemyDied -= OnEnemyDie;
     }
 
     private void OnPlayerDie()

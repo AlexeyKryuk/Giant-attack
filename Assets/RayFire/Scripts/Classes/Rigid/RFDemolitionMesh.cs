@@ -385,7 +385,9 @@ namespace RayFire
             }
 
             // Fix scale after change
-            scr.rootChild.localScale = Vector3.one;
+            if (scr.skinnedMeshRend == null)
+                scr.rootChild.localScale = Vector3.one;
+            //scr.rootChild.localScale = Vector3.one;
             
             // Set root to manager
             if (RayfireMan.inst != null && RayfireMan.inst.advancedDemolitionProperties.parent == RFManDemolition.FragmentParentType.Manager)

@@ -11,15 +11,29 @@ public class Player : MonoBehaviour
     [SerializeField] private Hitting _hitting;
     [SerializeField] private int _health;
 
+    private List<Enemy> _enemies;
+
     public int Health => _health;
 
     public UnityAction Died;
+    public UnityAction AllEnemyDied;
     public UnityAction Damaged;
 
-    public void OnEnemyDie()
+    private void Awake()
     {
-        _strafing.enabled = false;
-        _hitting.enabled = false;
+        _enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
+    }
+
+    public void OnEnemyDie(Enemy enemy)
+    {
+        _enemies.Remove(enemy);
+
+        if (_enemies.Count < 1)
+        {
+            _strafing.enabled = false;
+            _hitting.enabled = false;
+            AllEnemyDied?.Invoke();
+        }
     }
 
     public void ApplyDamage(int amount)

@@ -66,7 +66,6 @@ public class FootballHitting : Hitting
     {
         _isHitting = true;
         _cuurentBall = _pitcher.CurrentBall;
-        Debug.Log("Kick");
         _cuurentBall.Kick(_aiming.Target);
 
         StartCoroutine(SimulateProjectile(false));
@@ -82,14 +81,22 @@ public class FootballHitting : Hitting
     private IEnumerator SimulateProjectile(bool isTrajectory)
     {
         Transform projectile;
+        Vector3 target;
+
         if (isTrajectory)
+        {
             projectile = _projectoryBall;
+            target = _aiming.Target;
+        }
         else
+        {
             projectile = _cuurentBall.transform;
+            target = _aiming.Target + projectile.forward / 5f;
+        }
 
         _trajectory.ResetPoints();
 
-        float target_Distance = Vector3.Distance(projectile.position, _aiming.Target);
+        float target_Distance = Vector3.Distance(projectile.position, target);
         float projectile_Velocity = target_Distance / (Mathf.Sin(2 * _firingAngle * Mathf.Deg2Rad) / _gravity);
 
         float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(_firingAngle * Mathf.Deg2Rad);
@@ -97,7 +104,7 @@ public class FootballHitting : Hitting
 
         float flightDuration = target_Distance / Vx;
 
-        projectile.rotation = Quaternion.LookRotation(_aiming.Target - projectile.position);
+        projectile.rotation = Quaternion.LookRotation(target - projectile.position);
 
         float elapse_time = 0;
 

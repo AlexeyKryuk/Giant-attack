@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _touchDetection: {fileID: 470921357}
   _crosshair: {fileID: 1709214859}
-  _speed: 1
+  _speed: 0.6
   _horizontal: {fileID: 504972784}
   _vertical: {fileID: 349146551}
 --- !u!1 &1513595372

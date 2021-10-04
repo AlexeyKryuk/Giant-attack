@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
-public class TakeDamageTransition : Transition
+public class StartMoveTransition : Transition
 {
+    [SerializeField] private TapToStartPanel _startPanel;
+
     private Enemy _enemy;
     private Coroutine _coroutine;
 
@@ -16,15 +18,15 @@ public class TakeDamageTransition : Transition
     protected override void OnEnable()
     {
         base.OnEnable();
-        _enemy.Damaged += OnTakeDamage;
+        _startPanel.GameBegun += OnGameBegun;
     }
 
     private void OnDisable()
     {
-        _enemy.Damaged -= OnTakeDamage;
+        _startPanel.GameBegun -= OnGameBegun;
     }
 
-    private void OnTakeDamage()
+    private void OnGameBegun()
     {
         if (_coroutine == null)
             _coroutine = StartCoroutine(DelayBeforeTransit());
@@ -32,7 +34,7 @@ public class TakeDamageTransition : Transition
 
     private IEnumerator DelayBeforeTransit()
     {
-        float animationLength = Animator.GetCurrentAnimatorClipInfo(0).Length - 0.2f;
+        float animationLength = Random.Range(0, 3);
         yield return new WaitForSeconds(animationLength);
         NeedTransit = true;
     }

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TapToStartPanel : MonoBehaviour
 {
     [SerializeField] private InputDetection _input;
+
+    public UnityAction GameBegun;
 
     private void Awake()
     {
@@ -24,6 +27,7 @@ public class TapToStartPanel : MonoBehaviour
     private void OnTouch()
     {
         Time.timeScale = 1;
+        GameBegun?.Invoke();
         gameObject.SetActive(false);
     }
 }

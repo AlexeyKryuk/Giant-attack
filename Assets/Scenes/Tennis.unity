@@ -439,6 +439,22 @@ PrefabInstance:
       propertyPath: _animationEvents
       value: 
       objectReference: {fileID: 8173421425049906203}
+    - target: {fileID: 919167818127584968, guid: c10928098750dd842b410ff1c4f127cc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 919167818127584968, guid: c10928098750dd842b410ff1c4f127cc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919167818127584975, guid: c10928098750dd842b410ff1c4f127cc,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd69d9e0caf1c24084710f3357bee53,
+        type: 3}
     - target: {fileID: 919167818279555780, guid: c10928098750dd842b410ff1c4f127cc,
         type: 3}
       propertyPath: m_Name

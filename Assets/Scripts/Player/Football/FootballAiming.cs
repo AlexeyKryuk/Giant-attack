@@ -5,6 +5,7 @@ using UnityEngine;
 public class FootballAiming : Aiming
 {
     [SerializeField] private Transform _crosshair;
+    [SerializeField] private DisplacementDetection _input;
 
 	protected override void CalculateTarget()
     {
@@ -21,9 +22,9 @@ public class FootballAiming : Aiming
 
     private void AimCrosshair()
     {
-        if (Input.GetMouseButton(0))
-        {
-            _crosshair.position = Vector3.Lerp(_crosshair.position, Input.mousePosition, 100f * Time.deltaTime);
-        }
+        Vector3 centerScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Vector3 displacement = new Vector3(_input.Displacement.x, -_input.Displacement.y, 0);
+        _crosshair.position = displacement;
+        //_crosshair.position = Vector3.Lerp(_crosshair.position, _input.Displacement, 100f * Time.deltaTime);
     }
 }

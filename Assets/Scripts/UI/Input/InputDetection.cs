@@ -11,6 +11,8 @@ public class InputDetection : MonoBehaviour
     public UnityAction TouchBegan;
     public UnityAction TouchMoved;
 
+    public Vector2 Displacement { get; protected set; }
+
     protected bool IsMobile;
 
     private void Start()

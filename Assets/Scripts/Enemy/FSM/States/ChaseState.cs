@@ -35,12 +35,9 @@ public class ChaseState : State
     {
         RotateToTarget(target);
 
-        Vector2 currentPos = new Vector2(transform.position.x, transform.position.z);
-        Vector2 targetPos = new Vector2(target.x, target.z);
+        Vector3 currentPos = transform.position;
+        Vector3 newPos = Vector3.MoveTowards(currentPos, target, speed * Time.unscaledDeltaTime);
 
-        Vector2 vector2Pos = Vector2.MoveTowards(currentPos, targetPos, speed * Time.unscaledDeltaTime);
-
-        Vector3 newPos = new Vector3(vector2Pos.x, transform.position.y, vector2Pos.y);
         transform.position = newPos;
     }
 

@@ -34,7 +34,7 @@ public class StartMoveTransition : Transition
 
     private IEnumerator DelayBeforeTransit()
     {
-        float animationLength = Random.Range(0, 3);
+        float animationLength = Random.Range(0, 1);
         yield return new WaitForSeconds(animationLength);
         NeedTransit = true;
     }

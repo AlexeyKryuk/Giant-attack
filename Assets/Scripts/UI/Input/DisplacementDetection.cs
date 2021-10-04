@@ -34,8 +34,6 @@ public class DisplacementDetection : InputDetection
         }
         else
         {
-            Debug.Log(Displacement);
-
             if (Input.GetMouseButton(0))
             {
                 if (Vector2.Distance(Input.mousePosition, _lastPosition) > 0)

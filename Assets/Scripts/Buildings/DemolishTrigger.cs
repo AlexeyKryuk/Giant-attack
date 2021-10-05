@@ -21,7 +21,10 @@ public class DemolishTrigger : MonoBehaviour
         {
             _camera.Shake();
             _rayfireRigid.Demolish();
-            _effect.Play();
+
+            if (_effect != null)
+                _effect.Play();
+            
             _isTrigger = true;
         }
     }

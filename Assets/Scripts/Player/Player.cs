@@ -43,6 +43,8 @@ public class Player : MonoBehaviour
         if (_health > 0)
         {
             _health -= amount;
+            Time.timeScale = 1;
+
             if (_health <= 0)
             {
                 _health = 0;

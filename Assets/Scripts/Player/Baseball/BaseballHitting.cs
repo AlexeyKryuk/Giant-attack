@@ -25,12 +25,8 @@ public class BaseballHitting : Hitting
     {
         if (_currentTime >= _cooldown && !_strafing.IsStrafing && !_isHitting)
         {
-            if (Time.timeScale > 0)
-            {
-                _isHitting = true;
-                _animator.SetTrigger("Hit");
-                _currentTime = 0;
-            }
+            _isHitting = true;
+            _animator.SetTrigger("Hit");
         }
 
         _currentTime += Time.deltaTime;

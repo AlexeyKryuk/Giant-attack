@@ -38,7 +38,7 @@ public class AttackState : State
 
     private void OnAttack()
     {
-        if (_strafe.CurrentSide == Side.Middle && Target != null)
+        if (Target != null)
             Target.ApplyDamage(_damage);
     }
 

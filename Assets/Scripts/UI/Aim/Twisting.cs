@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Twisting : MonoBehaviour
 {
+    [SerializeField] protected Animator _animator;
     [SerializeField] protected TouchDetection _touchDetection;
     [SerializeField] protected RectTransform _crosshair;
     [SerializeField] protected float _speed;
@@ -12,14 +13,13 @@ public abstract class Twisting : MonoBehaviour
     {
         _touchDetection.Touched += OnTouch;
         _crosshair.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
 
     protected virtual void OnDisable()
     {
         _touchDetection.Touched -= OnTouch;
         _crosshair.gameObject.SetActive(false);
-        Time.timeScale = 1;
+        _animator.SetTrigger("ContinueHit");
     }
 
     protected abstract void OnTouch();

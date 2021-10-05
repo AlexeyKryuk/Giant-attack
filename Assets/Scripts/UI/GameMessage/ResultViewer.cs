@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ResultViewer : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Enemy _enemy;
     [SerializeField] private Image _background;
     [Space]
     [SerializeField] private Button _loseButton;

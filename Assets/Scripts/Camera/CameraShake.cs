@@ -33,6 +33,13 @@ public class CameraShake : MonoBehaviour
 
     public void Shake()
     {
+        StartCoroutine(StartShakeByTime(0.2f));
+    }
+
+    private IEnumerator StartShakeByTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
         _camera.DOShakePosition(_duration, _strength, _vibrato, _randomness, _fadeOut);
     }
 }

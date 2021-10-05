@@ -15,9 +15,10 @@ public class Player : MonoBehaviour
 
     public int Health => _health;
 
+    public UnityAction Damaged;
     public UnityAction Died;
     public UnityAction AllEnemyDied;
-    public UnityAction Damaged;
+    public UnityAction EnemyDied;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     public void OnEnemyDie(Enemy enemy)
     {
         _enemies.Remove(enemy);
+        EnemyDied?.Invoke();
 
         if (_enemies.Count < 1)
         {

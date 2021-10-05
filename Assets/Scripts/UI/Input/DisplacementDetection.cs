@@ -9,7 +9,7 @@ public class DisplacementDetection : InputDetection
 
     private void Start()
     {
-        _centerScreen = new Vector3(0, Screen.height - 500f, 0);
+        _centerScreen = new Vector3(0, 0, 0);
         Displacement = _centerScreen;
     }
 
@@ -23,17 +23,21 @@ public class DisplacementDetection : InputDetection
             {
                 Touch touch = Input.GetTouch(0);
 
-                if (Vector2.Distance(touch.position, _lastPosition) > 0)
-                    Displacement = touch.position - _lastPosition;
+                Displacement = touch.position - _centerScreen;
 
                 if (touch.phase == TouchPhase.Moved)
+                {
+                    if (Vector2.Distance(touch.position, _lastPosition) > 0)
+                        Displacement = touch.position - _centerScreen;
+
                     _lastPosition = touch.position;
-                else
-                    _lastPosition = Vector2.zero;
+                }
             }
         }
         else
         {
+            Displacement = (Vector2)Input.mousePosition - _centerScreen;
+
             if (Input.GetMouseButton(0))
             {
                 if (Vector2.Distance(Input.mousePosition, _lastPosition) > 0)
@@ -41,8 +45,6 @@ public class DisplacementDetection : InputDetection
 
                 _lastPosition = Input.mousePosition;
             }
-            else
-                _lastPosition = Vector2.zero;
         }
     }
 }

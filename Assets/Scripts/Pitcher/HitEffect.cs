@@ -12,7 +12,6 @@ public class HitEffect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (_isHit)
             return;
 

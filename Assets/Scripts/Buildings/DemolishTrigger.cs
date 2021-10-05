@@ -5,6 +5,7 @@ using RayFire;
 
 public class DemolishTrigger : MonoBehaviour
 {
+    [SerializeField] private CameraShake _camera;
     [SerializeField] private RayfireRigid _rayfireRigid;
     [SerializeField] private ParticleSystem _effect;
 
@@ -18,6 +19,7 @@ public class DemolishTrigger : MonoBehaviour
         Enemy enemy = other.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
+            _camera.Shake();
             _rayfireRigid.Demolish();
             _effect.Play();
             _isTrigger = true;

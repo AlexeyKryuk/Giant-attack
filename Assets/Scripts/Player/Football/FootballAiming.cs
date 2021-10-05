@@ -22,9 +22,7 @@ public class FootballAiming : Aiming
 
     private void AimCrosshair()
     {
-        Vector3 centerScreen = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        Vector3 displacement = new Vector3(_input.Displacement.x, -_input.Displacement.y, 0);
+        Vector3 displacement = new Vector3(_input.Displacement.x, _input.Displacement.y, 0);
         _crosshair.position = displacement;
-        //_crosshair.position = Vector3.Lerp(_crosshair.position, _input.Displacement, 100f * Time.deltaTime);
     }
 }

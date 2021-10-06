@@ -26,6 +26,8 @@ public class BaseballAiming : Aiming
 
         if (Physics.Raycast(ray, out hit, 1000f, LayerMask))
             Target = hit.point;
+
+        Debug.DrawLine(Camera.transform.position, hit.point);
     }
 
     public void OnAimBlow()

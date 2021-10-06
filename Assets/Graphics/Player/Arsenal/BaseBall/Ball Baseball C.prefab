@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41fa746489dadb499ee5d9d257463d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 7
+  _moveSpeed: 8
 --- !u!114 &-1189716795783154276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,9 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hitEffectPrefab: {fileID: 2015091145419659825, guid: 1d34fc9154e27a44dae5b4e658bfde97,
     type: 3}
-  _layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!54 &3255598271765230649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -196,6 +193,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 244750985294256985, guid: 349f6b3b64a72db49b2caa893686934a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 244750985294256985, guid: 349f6b3b64a72db49b2caa893686934a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 244750985294256985, guid: 349f6b3b64a72db49b2caa893686934a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 244750985294256985, guid: 349f6b3b64a72db49b2caa893686934a,
         type: 3}

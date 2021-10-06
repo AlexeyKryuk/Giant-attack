@@ -14,6 +14,7 @@ public class RandomTwisting : Twisting
     protected override void OnEnable()
     {
         base.OnEnable();
+        _crosshair.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
         _nextPosition = _crosshair.position;
         _center = _crosshair.position;
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flying : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 2f;
+    [SerializeField] private float _curvature = 0.2f;
 
     private Vector3 _target;
 
@@ -14,7 +15,7 @@ public class Flying : MonoBehaviour
         {
             Vector3 from = this.transform.forward;
             Vector3 to = _target - this.transform.position;
-            float time = 0.2f / Vector3.Distance(_target, this.transform.position);
+            float time = _curvature / Vector3.Distance(_target, this.transform.position);
 
             this.transform.forward = Vector3.Slerp(from, to, time);
             this.transform.position += this.transform.forward * _moveSpeed * Time.deltaTime;

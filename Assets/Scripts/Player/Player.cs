@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private List<Enemy> _enemies;
 
     public int Health => _health;
+    public List<Enemy> Enemies => _enemies;
 
     public UnityAction Damaged;
     public UnityAction Died;

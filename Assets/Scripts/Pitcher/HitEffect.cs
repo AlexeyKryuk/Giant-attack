@@ -5,7 +5,6 @@ using UnityEngine;
 public class HitEffect : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _hitEffectPrefab;
-    [SerializeField] private LayerMask _layerMask;
 
     private Vector3 _target;
     private bool _isHit;

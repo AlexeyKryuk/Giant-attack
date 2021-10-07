@@ -9,7 +9,7 @@ public class DisplacementDetection : InputDetection
 
     private void Start()
     {
-        _centerScreen = new Vector3(0, 0, 0);
+        _centerScreen = new Vector3(0, -300f, 0);
         Displacement = _centerScreen;
     }
 

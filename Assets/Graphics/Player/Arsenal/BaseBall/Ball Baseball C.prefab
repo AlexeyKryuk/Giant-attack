@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 8
+  _curvature: 0.7
 --- !u!114 &-1189716795783154276
 MonoBehaviour:
   m_ObjectHideFlags: 0

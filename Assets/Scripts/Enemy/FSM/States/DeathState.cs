@@ -18,9 +18,12 @@ public class DeathState : State
         base.OnEnable();
 
         DisableColliders();
+
+        _rayfire.gameObject.SetActive(true);
+        _rayfire.transform.SetParent(transform.parent);
         _rayfire.Demolish();
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject);
     }
 
     private void DisableColliders()

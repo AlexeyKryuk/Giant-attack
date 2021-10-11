@@ -91,6 +91,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DirectIntensityOutline: 1
     - _DstBlend: 0
+    - _DstBlendOutline: 0
     - _EmissionChannel: 4
     - _EmissionScaleUI: 0
     - _FresnelMax: 1.5
@@ -108,6 +109,9 @@ Material:
     - _NormalsUVType: 0
     - _OcclusionChannel: 0
     - _OcclusionStrength: 1
+    - _Offset1: 0
+    - _Offset2: 0
+    - _Outline: 1
     - _OutlineLightingType: 0
     - _OutlineLightingTypeURP: 0
     - _OutlineMinWidth: 1
@@ -138,6 +142,8 @@ Material:
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
     - _SrcBlend: 1
+    - _SrcBlendOutline: 0
+    - _TexLod: 5
     - _UVSec: 0
     - _UseAlphaTest: 0
     - _UseEmission: 0
@@ -153,6 +159,7 @@ Material:
     - _UseRimLightMask: 1
     - _UseShadowTexture: 0
     - _UseSpecular: 0
+    - _ZSmooth: -0.5
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ResultViewer : MonoBehaviour
@@ -16,6 +17,9 @@ public class ResultViewer : MonoBehaviour
 
     private Color _grey;
     private Coroutine _coroutine;
+
+    public UnityAction Won;
+    public UnityAction Lose;
 
     private void OnEnable()
     {
@@ -35,13 +39,19 @@ public class ResultViewer : MonoBehaviour
     private void OnPlayerDie()
     {
         if (_coroutine == null)
+        {
+            Lose?.Invoke();
             _coroutine = StartCoroutine(ShowPanelByTime(2f, _loseButton, _loseLabel));
+        }
     }
 
     private void OnEnemyDie()
     {
         if (_coroutine == null)
+        {
+            Won?.Invoke();
             _coroutine = StartCoroutine(ShowPanelByTime(2f, _winButton, _winLabel));
+        }
     }
 
     private IEnumerator ShowPanelByTime(float time, Button button, Image label)

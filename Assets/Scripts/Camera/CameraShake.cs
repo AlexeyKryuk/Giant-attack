@@ -23,12 +23,12 @@ public class CameraShake : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.EnemyDied += Shake;
+        _player.BossDied += Shake;
     }
 
     private void OnDisable()
     {
-        _player.EnemyDied -= Shake;
+        _player.BossDied -= Shake;
     }
 
     public void Shake()

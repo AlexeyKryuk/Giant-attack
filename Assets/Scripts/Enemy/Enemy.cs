@@ -9,11 +9,13 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Player _target;
     [SerializeField] private int _health;
+    [SerializeField] private bool _isBoss;
 
     private Animator _animator;
 
     public Player Target => _target;
     public int Health => _health;
+    public bool IsBoss => _isBoss;
 
     public UnityAction Damaged;
     public UnityAction <Enemy>Died;
@@ -34,7 +36,10 @@ public class Enemy : MonoBehaviour
             Died?.Invoke(this);
 
             if (Target != null)
-                Target.OnEnemyDie(this);
+                if (IsBoss)
+                    Target.OnBossDie(this);
+                else
+                    Target.OnEnemyDie(this);
         }
     }
 }

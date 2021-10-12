@@ -11,31 +11,59 @@ public class Player : MonoBehaviour
     [SerializeField] private Hitting _hitting;
     [SerializeField] private int _health;
 
-    private List<Enemy> _enemies;
+    private List<Enemy> _enemies = new List<Enemy>();
+    private List<Enemy> _bosses = new List<Enemy>();
 
     public int Health => _health;
     public List<Enemy> Enemies => _enemies;
 
     public UnityAction Damaged;
     public UnityAction Died;
+
     public UnityAction AllEnemyDied;
     public UnityAction EnemyDied;
+    public UnityAction BossDied;
 
     private void Awake()
     {
         _enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
+
+        for (int i = 0; i < _enemies.Count; i++)
+        {
+            Enemy enemy = _enemies[i];
+
+            if (enemy.IsBoss)
+            {
+                _bosses.Add(enemy);
+                _enemies.Remove(enemy);
+                enemy.gameObject.SetActive(false);
+                i--;
+            }
+        }
+    }
+
+    public void OnBossDie(Enemy enemy)
+    {
+        BossDied?.Invoke();
+        _bosses.Remove(enemy);
+
+        if (_bosses.Count < 1)
+        {
+            AllEnemyDied?.Invoke();
+        }
     }
 
     public void OnEnemyDie(Enemy enemy)
     {
-        _enemies.Remove(enemy);
         EnemyDied?.Invoke();
+        _enemies.Remove(enemy);
 
         if (_enemies.Count < 1)
         {
-            _strafing.enabled = false;
-            _hitting.enabled = false;
-            AllEnemyDied?.Invoke();
+            foreach (var boss in _bosses)
+            {
+                boss.gameObject.SetActive(true);
+            }
         }
     }
 

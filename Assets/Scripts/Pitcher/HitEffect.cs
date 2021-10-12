@@ -11,10 +11,9 @@ public class HitEffect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_isHit)
+        if (_target == null)
             return;
 
-        _isHit = true;
         Enemy enemy = collision.collider.GetComponentInParent<Enemy>();
 
         if (enemy != null)

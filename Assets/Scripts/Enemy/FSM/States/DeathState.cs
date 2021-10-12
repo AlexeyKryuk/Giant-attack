@@ -17,13 +17,10 @@ public class DeathState : State
     {
         base.OnEnable();
 
-        DisableColliders();
-
-        _rayfire.gameObject.SetActive(true);
-        _rayfire.transform.SetParent(transform.parent);
-        _rayfire.Demolish();
-
-        Destroy(gameObject);
+        if (Enemy.IsBoss)
+            BossDie();
+        else
+            EnemyDie();
     }
 
     private void DisableColliders()
@@ -32,5 +29,28 @@ public class DeathState : State
         {
             collider.enabled = false;
         }
+    }
+
+    private void BossDie()
+    {
+        StartCoroutine(DestroyByTime(0f));
+    }
+
+    private void EnemyDie()
+    {
+        Animator.SetTrigger("Death");
+        StartCoroutine(DestroyByTime(2f));
+    }
+
+    private IEnumerator DestroyByTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        DisableColliders();
+
+        _rayfire.gameObject.SetActive(true);
+        _rayfire.transform.SetParent(transform.parent);
+        _rayfire.Demolish();
+
+        Destroy(gameObject);
     }
 }

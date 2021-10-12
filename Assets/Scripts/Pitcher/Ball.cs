@@ -23,8 +23,11 @@ public class Ball : MonoBehaviour
             _flyingBall.SetTarget(target);
         }
 
-        _hitEffect.enabled = true;
-        _hitEffect.SetTarget(target);
+        if (_hitEffect != null)
+        {
+            _hitEffect.enabled = true;
+            _hitEffect.SetTarget(target);
+        }
     }
 
     private void OnAnimationEnd()

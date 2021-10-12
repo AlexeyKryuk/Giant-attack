@@ -10,6 +10,7 @@ public class Strafing : MonoBehaviour
     [SerializeField] private float _distance;
     [SerializeField] private float _smoothness;
 
+    private Player _player;
     private Vector3 _targetPosition;
     private Side _currentSide = Side.Middle;
     private bool _isStrafing;
@@ -17,14 +18,21 @@ public class Strafing : MonoBehaviour
     public Side CurrentSide => _currentSide;
     public bool IsStrafing => _isStrafing;
 
+    private void Awake()
+    {
+        _player = GetComponent<Player>();
+    }
+
     private void OnEnable()
     {
         _swipeDetection.Swiped += Strafe;
+        _player.AllEnemyDied += OnLevelComplete;
     }
 
     private void OnDisable()
     {
         _swipeDetection.Swiped -= Strafe;
+        _player.AllEnemyDied -= OnLevelComplete;
     }
 
     private void Start()
@@ -79,4 +87,6 @@ public class Strafing : MonoBehaviour
         else
             yield return null;
     }
+
+    private void OnLevelComplete() => enabled = false;
 }

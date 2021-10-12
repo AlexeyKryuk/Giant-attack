@@ -18,6 +18,11 @@ public class StartMoveTransition : Transition
     protected override void OnEnable()
     {
         base.OnEnable();
+
+        if (_enemy.IsBoss)
+            if (_coroutine == null)
+                _coroutine = StartCoroutine(DelayBeforeTransit());
+
         _startPanel.GameBegun += OnGameBegun;
     }
 

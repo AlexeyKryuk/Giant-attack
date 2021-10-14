@@ -6,7 +6,8 @@ using RayFire;
 public class DemolishTrigger : MonoBehaviour
 {
     [SerializeField] private CameraShake _camera;
-    [SerializeField] private RayfireRigid _rayfireRigid;
+    [SerializeField] private List<RayfireRigid> _rayfireRigid;
+    [SerializeField] private List<Tossing> _fans;
     [SerializeField] private ParticleSystem _effect;
 
     private bool _isTrigger;
@@ -20,7 +21,12 @@ public class DemolishTrigger : MonoBehaviour
         if (enemy != null)
         {
             _camera.Shake();
-            _rayfireRigid.Demolish();
+
+            foreach (var rf in _rayfireRigid)
+                rf.Demolish();
+
+            foreach (var fan in _fans)
+                fan.Toss();
 
             if (_effect != null)
                 _effect.Play();

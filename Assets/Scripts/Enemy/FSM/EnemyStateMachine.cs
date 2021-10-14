@@ -14,9 +14,13 @@ public class EnemyStateMachine : MonoBehaviour
 
     public State Current => _currentState;
 
-    private void Start()
+    private void Awake()
     {
         _enemy = GetComponent<Enemy>();
+    }
+
+    private void Start()
+    {
         _target = _enemy.Target;
         Reset(_firstState);
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    [SerializeField] private Strafing _strafe;
     [SerializeField] private int _damage;
     [SerializeField] private float _cooldown;
 

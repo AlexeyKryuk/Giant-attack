@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathState : State
 {
+    [SerializeField] private ParticleSystem _deathEffect;
     [SerializeField] private RayFire.RayfireRigid _rayfire;
 
     private Collider[] _colliders;
@@ -33,18 +34,6 @@ public class DeathState : State
 
     private void BossDie()
     {
-        StartCoroutine(DestroyByTime(0f));
-    }
-
-    private void EnemyDie()
-    {
-        Animator.SetTrigger("Death");
-        StartCoroutine(DestroyByTime(2f));
-    }
-
-    private IEnumerator DestroyByTime(float time)
-    {
-        yield return new WaitForSeconds(time);
         DisableColliders();
 
         _rayfire.gameObject.SetActive(true);
@@ -52,5 +41,22 @@ public class DeathState : State
         _rayfire.Demolish();
 
         Destroy(gameObject);
+    }
+
+    private void EnemyDie()
+    {
+        Animator.SetTrigger("Death");
+
+        StartCoroutine(MoveDownByTime(2.5f));
+    }
+
+    private IEnumerator MoveDownByTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        _deathEffect.Play();
+        Debug.Log(_deathEffect.gameObject.name);
+        DisableColliders();
+        Destroy(gameObject, 2f);
     }
 }

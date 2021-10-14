@@ -44,7 +44,7 @@ public class TrajectoryDrawing : MonoBehaviour
         _crosshair.SetActive(true);
         _crosshair.transform.position = _poolOfSphere[lastIndex - 2].position;
 
-        Vector2 scale = new Vector2(_crosshair.transform.localPosition.z / 20, _crosshair.transform.localPosition.z / 20);
+        Vector2 scale = new Vector2(_crosshair.transform.localPosition.z / 40, _crosshair.transform.localPosition.z / 40);
         _crosshair.transform.localScale = scale;
     }
 

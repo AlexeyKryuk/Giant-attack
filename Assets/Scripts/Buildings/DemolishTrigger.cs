@@ -18,7 +18,7 @@ public class DemolishTrigger : MonoBehaviour
             return;
 
         Enemy enemy = other.GetComponentInParent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && enemy.IsBoss)
         {
             _camera.Shake();
 

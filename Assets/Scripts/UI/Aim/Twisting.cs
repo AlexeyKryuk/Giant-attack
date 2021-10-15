@@ -19,7 +19,8 @@ public abstract class Twisting : MonoBehaviour
     {
         _touchDetection.Touched -= OnTouch;
         _crosshair.gameObject.SetActive(false);
-        _animator.SetTrigger("ContinueHit");
+        if (_animator != null)
+            _animator.SetTrigger("ContinueHit");
     }
 
     protected abstract void OnTouch();

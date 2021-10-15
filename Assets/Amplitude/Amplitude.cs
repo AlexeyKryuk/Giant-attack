@@ -342,8 +342,6 @@ public class Amplitude {
 
 	protected void Log(string message) {
 		if(!logging) return;
-
-		Debug.Log(message);
 	}
 
 	protected void Log<T>(string message, string property, IEnumerable<T> array) {

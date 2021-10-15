@@ -5,13 +5,14 @@ using UnityEngine;
 public class BaseballHitting : Hitting
 {
     [SerializeField] private float _cooldown;
-    [SerializeField] private Strafing _strafing;
 
     private float _currentTime;
     private Animator _animator;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         _animator = GetComponent<Animator>();
         _currentTime = _cooldown;
     }
@@ -23,7 +24,7 @@ public class BaseballHitting : Hitting
 
     private void Update()
     {
-        if (_currentTime >= _cooldown && !_strafing.IsStrafing && !_isHitting)
+        if (_currentTime >= _cooldown && !_isHitting)
         {
             _isHitting = true;
             _animator.SetTrigger("Hit");

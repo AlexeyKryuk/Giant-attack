@@ -15,7 +15,7 @@ public abstract class Hitting : MonoBehaviour
 
     public bool IsHitting => _isHitting;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _player = GetComponent<Player>();
     }

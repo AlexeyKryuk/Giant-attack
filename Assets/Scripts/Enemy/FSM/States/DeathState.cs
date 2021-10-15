@@ -55,7 +55,6 @@ public class DeathState : State
         yield return new WaitForSeconds(time);
 
         _deathEffect.Play();
-        Debug.Log(_deathEffect.gameObject.name);
         DisableColliders();
         Destroy(gameObject, 2f);
     }

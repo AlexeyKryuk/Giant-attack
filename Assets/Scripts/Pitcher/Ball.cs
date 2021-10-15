@@ -26,6 +26,7 @@ public class Ball : MonoBehaviour
         if (_hitEffect != null)
         {
             _hitEffect.enabled = true;
+            _hitEffect.IsFlying = true;
             _hitEffect.SetTarget(target);
         }
     }

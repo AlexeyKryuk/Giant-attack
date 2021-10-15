@@ -36,6 +36,8 @@ public class Tossing : MonoBehaviour
         AddForce(_force);
         //DisableCollision();
         Recolor(Color.grey);
+
+        Destroy(gameObject, 4f);
     }
 
     private void MakePhysical(bool value)

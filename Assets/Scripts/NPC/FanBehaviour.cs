@@ -14,9 +14,11 @@ public class FanBehaviour : MonoBehaviour
         if (_currentTime >= _timer)
         {
             float random = Random.Range(0f, 1f);
+            _timer = Random.Range(0f, 3f);
+
             _animator.SetTrigger("Action");
-            Debug.Log(random);
             _animator.SetFloat("Variant", random);
+
             _currentTime = 0;
         }
 

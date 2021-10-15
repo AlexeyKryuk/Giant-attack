@@ -7,11 +7,12 @@ public class HitEffect : MonoBehaviour
     [SerializeField] private ParticleSystem _hitEffectPrefab;
 
     private Vector3 _target;
-    private bool _isHit;
+
+    public bool IsFlying { get; set; }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (_target == null)
+        if (_target == null || !IsFlying)
             return;
 
         Enemy enemy = collision.collider.GetComponentInParent<Enemy>();

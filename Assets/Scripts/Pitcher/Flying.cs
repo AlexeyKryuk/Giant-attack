@@ -8,8 +8,14 @@ public class Flying : MonoBehaviour
     [SerializeField] private float _curvature = 0.2f;
 
     private Vector3 _target;
+    private Rigidbody _rigidbody;
 
-    private void Update()
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
     {
         if (_target != null)
         {
@@ -18,7 +24,7 @@ public class Flying : MonoBehaviour
             float time = _curvature / Vector3.Distance(_target, this.transform.position);
 
             this.transform.forward = Vector3.Slerp(from, to, time);
-            this.transform.position += this.transform.forward * _moveSpeed * Time.deltaTime;
+            _rigidbody.position += this.transform.forward * _moveSpeed * Time.deltaTime;
         }
     }
 

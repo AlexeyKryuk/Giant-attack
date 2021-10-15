@@ -13,6 +13,7 @@ public class ChaseState : State
     {
         base.OnEnable();
         Animator.SetBool("Move", true);
+        Animator.Play("Walk", 0, Random.Range(0f, 2f));
         Enemy.Damaged += OnTakeDamage;
     }
 

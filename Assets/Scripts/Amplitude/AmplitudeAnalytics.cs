@@ -105,6 +105,14 @@ public class AmplitudeAnalytics : MonoBehaviour
         FireEvent("Level_start", property);
     }
 
+    private void OnLevelRestarted()
+    {
+        IDictionary<string, object> property = new Dictionary<string, object>();
+        property.Add("Level", _level.CurrentLevel);
+
+        FireEvent("Level_restart", property);
+    }
+
     private void SetBasicProperty()
     {
         _sessionID = _sessionID + 1;

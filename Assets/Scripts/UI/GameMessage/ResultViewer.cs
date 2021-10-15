@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ResultViewer : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private Image _background;
     [Space]
     [SerializeField] private Button _loseButton;
@@ -20,10 +21,12 @@ public class ResultViewer : MonoBehaviour
 
     public UnityAction Won;
     public UnityAction Lose;
+    public UnityAction Restarted;
 
     private void OnEnable()
     {
         _grey = _background.color;
+        _sceneLoader.CurrentSceneLoaded += OnRestartLevel;
         _player.Died += OnPlayerDie;
         _player.AllEnemyDied += OnEnemyDie;
     }
@@ -32,6 +35,7 @@ public class ResultViewer : MonoBehaviour
     {
         _grey.a = 0f;
         _background.color = _grey;
+        _sceneLoader.CurrentSceneLoaded -= OnRestartLevel;
         _player.Died -= OnPlayerDie;
         _player.AllEnemyDied -= OnEnemyDie;
     }
@@ -52,6 +56,11 @@ public class ResultViewer : MonoBehaviour
             Won?.Invoke();
             _coroutine = StartCoroutine(ShowPanelByTime(2f, _winButton, _winLabel));
         }
+    }
+
+    private void OnRestartLevel()
+    {
+        Restarted?.Invoke();
     }
 
     private IEnumerator ShowPanelByTime(float time, Button button, Image label)

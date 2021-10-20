@@ -4,32 +4,12 @@ using UnityEngine;
 
 public class HitEffect : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _hitEffectPrefab;
-    [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private ParticleSystem _hitEffectSlenderPrefab;
+    [SerializeField] private ParticleSystem _hitEffectBossPrefab;
 
     private Vector3 _target;
 
     public bool IsFlying { get; set; }
-
-    //private void Update()
-    //{
-    //    Ray ray = new Ray(transform.position, transform.forward);
-    //    RaycastHit hit;
-
-    //    if (Physics.Raycast(ray, out hit, 1.5f))
-    //    {
-    //        Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
-
-    //        if (enemy != null)
-    //        {
-    //            enemy.ApplyDamage();
-    //            SetHitEffect(hit.point, hit.transform);
-    //            Destroy(gameObject);
-    //        }
-
-    //        Destroy(gameObject);
-    //    }
-    //}
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,11 +17,18 @@ public class HitEffect : MonoBehaviour
             return;
 
         Enemy enemy = collision.collider.GetComponentInParent<Enemy>();
+        ParticleSystem hitEffect;
 
         if (enemy != null)
         {
             enemy.ApplyDamage();
-            SetHitEffect(collision.contacts[0].point, collision.transform);
+
+            if (enemy.IsBoss)
+                hitEffect = _hitEffectBossPrefab;
+            else
+                hitEffect = _hitEffectSlenderPrefab;
+
+            SetHitEffect(collision.contacts[0].point, collision.transform, hitEffect);
         }
 
         Destroy(gameObject);
@@ -52,9 +39,9 @@ public class HitEffect : MonoBehaviour
         _target = target;
     }
 
-    private void SetHitEffect(Vector3 point, Transform parent)
+    private void SetHitEffect(Vector3 point, Transform parent, ParticleSystem effect)
     {
-        var hitEffect = Instantiate(_hitEffectPrefab);
+        var hitEffect = Instantiate(effect);
         hitEffect.transform.position = point;
         hitEffect.transform.SetParent(parent);
     }

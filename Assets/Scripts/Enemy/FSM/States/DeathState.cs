@@ -46,14 +46,10 @@ public class DeathState : State
     private void EnemyDie()
     {
         Animator.SetTrigger("Death");
-
-        StartCoroutine(MoveDownByTime(2.5f));
     }
 
-    private IEnumerator MoveDownByTime(float time)
+    private void OnAnimationEnd()
     {
-        yield return new WaitForSeconds(time);
-
         _deathEffect.Play();
         DisableColliders();
         Destroy(gameObject, 2f);

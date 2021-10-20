@@ -2,12 +2,17 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private Text _label;
+    [SerializeField] private TMP_Text _label;
+    [Space]
+    [SerializeField] private TMP_Text _currentLevel;
+    [SerializeField] private TMP_Text _nextLevel;
 
     private Slider _slider;
     private float _incrementStep;
@@ -15,6 +20,8 @@ public class ProgressBar : MonoBehaviour
     private void Awake()
     {
         _slider = GetComponent<Slider>();
+        _currentLevel.text = Level.CurrentLevel.ToString();
+        _nextLevel.text = (Level.CurrentLevel + 1).ToString();
     }
 
     private void OnEnable()

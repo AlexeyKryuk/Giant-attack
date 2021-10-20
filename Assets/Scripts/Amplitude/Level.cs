@@ -12,7 +12,7 @@ public class Level : MonoBehaviour
     public UnityAction LevelWon;
     public UnityAction LevelLost;
 
-    public int CurrentLevel { get; private set; }
+    public static int CurrentLevel { get; private set; } = 1;
 
     private void OnEnable()
     {
@@ -41,5 +41,6 @@ public class Level : MonoBehaviour
     private void OnWon()
     {
         LevelWon?.Invoke();
+        CurrentLevel++;
     }
 }

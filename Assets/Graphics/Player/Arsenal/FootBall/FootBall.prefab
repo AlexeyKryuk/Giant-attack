@@ -145,7 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbc3076f69acce48bf45adbc32fe970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 2015091145419659825, guid: 1d34fc9154e27a44dae5b4e658bfde97,
+  _hitEffectSlenderPrefab: {fileID: 2015091145419659825, guid: a3b25c043dbbfea4aa5354ab880a19d3,
+    type: 3}
+  _hitEffectBossPrefab: {fileID: 2015091145419659825, guid: 1d34fc9154e27a44dae5b4e658bfde97,
     type: 3}
 --- !u!54 &3590100893404008297
 Rigidbody:

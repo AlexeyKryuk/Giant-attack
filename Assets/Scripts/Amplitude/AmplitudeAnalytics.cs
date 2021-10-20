@@ -60,7 +60,7 @@ public class AmplitudeAnalytics : MonoBehaviour
     {
         StartScene.IsStart = false;
 
-        if (_level.CurrentLevel == 1)
+        if (Level.CurrentLevel == 1)
         {
             _regDay = DateTime.Today.ToString("dd/MM/yy");
             _regDayFull = DateTime.Today.ToString();
@@ -78,7 +78,7 @@ public class AmplitudeAnalytics : MonoBehaviour
         int timeSpent = (int)Time.time - _startTime;
 
         IDictionary<string, object> properties = new Dictionary<string, object>();
-        properties.Add("Level", _level.CurrentLevel);
+        properties.Add("Level", Level.CurrentLevel);
         properties.Add("Time_spent", timeSpent);
 
         FireEvent("Level_fail", properties);
@@ -89,7 +89,7 @@ public class AmplitudeAnalytics : MonoBehaviour
         int timeSpent = (int)Time.time - _startTime;
 
         IDictionary<string, object> properties = new Dictionary<string, object>();
-        properties.Add("Level", _level.CurrentLevel);
+        properties.Add("Level", Level.CurrentLevel);
         properties.Add("Time_spent", timeSpent);
 
         FireEvent("Level_complete", properties);
@@ -100,7 +100,7 @@ public class AmplitudeAnalytics : MonoBehaviour
         _startTime = (int)Time.time;
 
         IDictionary<string, object> property = new Dictionary<string, object>();
-        property.Add("Level", _level.CurrentLevel);
+        property.Add("Level", Level.CurrentLevel);
 
         FireEvent("Level_start", property);
     }
@@ -108,7 +108,7 @@ public class AmplitudeAnalytics : MonoBehaviour
     private void OnLevelRestarted()
     {
         IDictionary<string, object> property = new Dictionary<string, object>();
-        property.Add("Level", _level.CurrentLevel);
+        property.Add("Level", Level.CurrentLevel);
 
         FireEvent("Level_restart", property);
     }
@@ -130,7 +130,7 @@ public class AmplitudeAnalytics : MonoBehaviour
 
     private void SettingUserProperties()
     {
-        int lastLevel = _level.CurrentLevel;
+        int lastLevel = Level.CurrentLevel;
         _amplitude.setUserProperty("level_last", lastLevel);
     }
 }

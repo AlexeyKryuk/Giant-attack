@@ -37,7 +37,7 @@ public class BaseballHitting : Hitting
     {
         _isHitting = true;
         _cuurentBall = _pitcher.CurrentBall;
-        _cuurentBall.Kick(_aiming.Target);
+        _cuurentBall.Kick(_aiming.Target.point);
     }
 
     protected override void OnHitEnd()

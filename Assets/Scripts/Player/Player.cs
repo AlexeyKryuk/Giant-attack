@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +15,9 @@ public class Player : MonoBehaviour
     private List<Enemy> _bosses = new List<Enemy>();
 
     public int Health => _health;
+    public Animator Animator => _animator;
     public List<Enemy> Enemies => _enemies;
+    public List<Enemy> AllEnemies => _enemies.Concat(_bosses).ToList();
 
     public UnityAction Damaged;
     public UnityAction Died;

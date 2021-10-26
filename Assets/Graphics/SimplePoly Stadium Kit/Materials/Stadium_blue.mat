@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 47e3bc2eb40b78e4c86b3d792f8abc29, type: 3}
+        m_Texture: {fileID: 2800000, guid: e8a8b9ba227958b4ba42102f5b41a229, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -124,7 +124,7 @@ Material:
     - _UseSpecular: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.874, g: 0.874, b: 0.874, a: 1}
+    - _BaseColor: {r: 0.16509432, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 0, a: 1}
     - _HColor: {r: 0.764151, g: 0.74612856, b: 0.74612856, a: 1}

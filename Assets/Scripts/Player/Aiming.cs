@@ -7,7 +7,7 @@ public abstract class Aiming : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private LayerMask _layerMask;
 
-    public Vector3 Target { get; protected set; }
+    public RaycastHit Target { get; protected set; }
     public Camera Camera => _camera;
     public LayerMask LayerMask => _layerMask;
 

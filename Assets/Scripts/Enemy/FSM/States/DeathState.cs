@@ -8,10 +8,12 @@ public class DeathState : State
     [SerializeField] private RayFire.RayfireRigid _rayfire;
 
     private Collider[] _colliders;
+    private Rigidbody _rigidbody;
 
     private void Awake()
     {
         _colliders = GetComponentsInChildren<Collider>();
+        _rigidbody = GetComponentInChildren<Rigidbody>();
     }
 
     protected override void OnEnable()
@@ -46,6 +48,7 @@ public class DeathState : State
     private void EnemyDie()
     {
         Animator.SetTrigger("Death");
+        _rigidbody.useGravity = true;
     }
 
     private void OnAnimationEnd()

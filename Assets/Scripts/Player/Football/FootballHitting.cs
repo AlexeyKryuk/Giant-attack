@@ -66,7 +66,7 @@ public class FootballHitting : Hitting
     {
         _isHitting = true;
         _cuurentBall = _pitcher.CurrentBall;
-        _cuurentBall.Kick(_aiming.Target);
+        _cuurentBall.Kick(_aiming.Target.point);
 
         StartCoroutine(SimulateProjectile(false));
     }
@@ -86,12 +86,12 @@ public class FootballHitting : Hitting
         if (isTrajectory)
         {
             projectile = _projectoryBall;
-            target = _aiming.Target;
+            target = _aiming.Target.point;
         }
         else
         {
             projectile = _cuurentBall.transform;
-            target = _aiming.Target + projectile.forward / 5f;
+            target = _aiming.Target.point + projectile.forward / 5f;
         }
 
         _trajectory.ResetPoints();

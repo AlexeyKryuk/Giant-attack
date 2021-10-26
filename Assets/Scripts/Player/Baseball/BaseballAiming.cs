@@ -25,7 +25,7 @@ public class BaseballAiming : Aiming
         Ray ray = Camera.ScreenPointToRay(_crosshair.position);
 
         if (Physics.Raycast(ray, out hit, 1000f, LayerMask))
-            Target = hit.point;
+            Target = hit;
 
         Debug.DrawLine(Camera.transform.position, hit.point);
     }

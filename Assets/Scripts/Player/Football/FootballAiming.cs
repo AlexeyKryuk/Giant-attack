@@ -16,7 +16,7 @@ public class FootballAiming : Aiming
 
         if (Physics.Raycast(ray, out hit, 1000f, LayerMask))
         {
-            Target = hit.point;
+            Target = hit;
         }
     }
 

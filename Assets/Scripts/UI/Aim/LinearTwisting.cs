@@ -8,8 +8,8 @@ public class LinearTwisting : Twisting
     [SerializeField] private Slider _horizontal;
     [SerializeField] private Slider _vertical;
     [SerializeField] private Camera _camera;
-
-    private float _slowSpeed;
+    [SerializeField] private float _slowSpeed;
+    
     private float _fastSpeed;
     private Slider _currentSlider;
     private Side _side = Side.Middle;
@@ -20,7 +20,6 @@ public class LinearTwisting : Twisting
     private void Awake()
     {
         _fastSpeed = _speed;
-        _slowSpeed = _speed / 4;
     }
 
     protected override void OnEnable()

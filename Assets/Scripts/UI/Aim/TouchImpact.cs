@@ -15,6 +15,7 @@ public class TouchImpact : MonoBehaviour
     private void OnDisable()
     {
         _touchDetection.Touched -= OnTouch;
+        _animation.Play();
     }
 
     private void OnTouch()

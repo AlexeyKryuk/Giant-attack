@@ -9,28 +9,31 @@ public class HitZone : MonoBehaviour
     [SerializeField] private Slider _gradientVer;
     [SerializeField] private Slider _gradientHor;
     [SerializeField] private RectTransform _nearestEnemyView;
-    [SerializeField] private Color _base;
-    [SerializeField] private Color _target;
 
-    private Transform _handleAreaVer;
-    private Transform _handleAreaHor;
+    private RectTransform _handleVer;
+    private RectTransform _handleHor;
 
     private void Awake()
     {
-        _handleAreaVer = _gradientVer.transform.GetChild(0);
-        _handleAreaHor = _gradientHor.transform.GetChild(0);
+        _handleVer = _gradientVer.handleRect;
+        _handleHor = _gradientHor.handleRect;
     }
 
     private void Update()
     {
-        _handleAreaVer.gameObject.SetActive(_twisting.enabled);
-        _handleAreaHor.gameObject.SetActive(_twisting.enabled);
+        MoveHandle();
+    }
 
-        if (_handleAreaHor.gameObject.activeInHierarchy)
+    private void MoveHandle()
+    {
+        _handleVer.gameObject.SetActive(_twisting.enabled);
+        _handleHor.gameObject.SetActive(_twisting.enabled);
+
+        if (_handleHor.gameObject.activeInHierarchy)
         {
-            _nearestEnemyView.position = _twisting.GetNearest();
+            _nearestEnemyView.position = _twisting.GetNearestOnScreen();
             Vector3 nearestPos = _nearestEnemyView.anchoredPosition;
-            
+
             if (transform.TryGetComponent(out RectTransform rectTransform))
             {
                 float XPos = nearestPos.x / rectTransform.rect.width;
@@ -39,6 +42,19 @@ public class HitZone : MonoBehaviour
                 _gradientHor.value = XPos;
                 _gradientVer.value = YPos;
             }
+
+            FitToSize();
         }
+    }
+
+    private void FitToSize()
+    {
+        Enemy nearestOnScene = _twisting.GetNearest();
+        Vector2[] size = _twisting.ProjectRectangle(nearestOnScene);
+        float width = size[0].x - size[1].x;
+        float height = size[3].y - size[2].y;
+
+        _handleHor.sizeDelta = new Vector2(Mathf.Abs(width), 0);
+        _handleVer.sizeDelta = new Vector2(0, Mathf.Abs(height));
     }
 }

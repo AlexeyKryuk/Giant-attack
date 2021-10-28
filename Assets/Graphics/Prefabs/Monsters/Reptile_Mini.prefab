@@ -1987,6 +1987,7 @@ GameObject:
   - component: {fileID: 8818974304042098433}
   - component: {fileID: 8818974304042098432}
   - component: {fileID: 8818974304042098439}
+  - component: {fileID: 2342440403887029119}
   m_Layer: 3
   m_Name: Reptile_Mini
   m_TagString: Untagged
@@ -2162,6 +2163,19 @@ MonoBehaviour:
   _transitions: []
   _deathEffect: {fileID: 6353319167760120687}
   _rayfire: {fileID: 0}
+--- !u!65 &2342440403887029119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818974304042098438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.103775, y: 1.8197913, z: 0.27174187}
+  m_Center: {x: 0.022838831, y: 0.8389456, z: 1.06}
 --- !u!1 &8959222847725882710
 GameObject:
   m_ObjectHideFlags: 0

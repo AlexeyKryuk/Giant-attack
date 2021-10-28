@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ChaseState : State
 {
     [SerializeField] private float _moveSpeed;
+    [SerializeField] private Vector3 _offset;
 
     private Coroutine _coroutine;
 
@@ -28,7 +29,7 @@ public class ChaseState : State
     {
         if (Target != null)
         {
-            MoveToTarget(Target.transform.position, _moveSpeed);
+            MoveToTarget(Target.transform.position + _offset, _moveSpeed);
         }
     }
 

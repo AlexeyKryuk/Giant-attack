@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 6437657655819433008}
   - component: {fileID: 6437657655819433009}
   - component: {fileID: 6437657655819433014}
+  - component: {fileID: 1098399725226721814}
   m_Layer: 3
   m_Name: Dragon_Mini
   m_TagString: Untagged
@@ -756,6 +757,19 @@ MonoBehaviour:
   _transitions: []
   _deathEffect: {fileID: 5438035227273972144}
   _rayfire: {fileID: 0}
+--- !u!65 &1098399725226721814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437657655819433015}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1648207, y: 2.1108363, z: 0.19895269}
+  m_Center: {x: 0.000026468946, y: 0.55541813, z: 0.27095705}
 --- !u!1 &6698439750286256248
 GameObject:
   m_ObjectHideFlags: 0

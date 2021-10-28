@@ -21450,7 +21450,7 @@ GameObject:
   - component: {fileID: 5560792840663465938}
   - component: {fileID: 2467575429512580904}
   - component: {fileID: 8003926069388467502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Build_03_root 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class LinearTwisting : Twisting
 {
+    [SerializeField] private float _slowSpeed;
     [SerializeField] private Slider _horizontal;
     [SerializeField] private Slider _vertical;
     [SerializeField] private Camera _camera;
-    [SerializeField] private float _slowSpeed;
+    [SerializeField] private Aiming _aiming;
     
     private float _fastSpeed;
     private Slider _currentSlider;
     private Side _side = Side.Middle;
     private List<Enemy> _enemies;
+    private Enemy _nearest;
 
     public RectTransform Crosshair { get => _crosshair; private set => _crosshair = value; }
+    public Enemy Nearest => _nearest;
+    public float FastSpeed => _fastSpeed;
 
     private void Awake()
     {
-        _fastSpeed = _speed;
+        _fastSpeed = _currentSpeed;
     }
 
     protected override void OnEnable()
@@ -58,7 +62,7 @@ public class LinearTwisting : Twisting
             _currentSlider = _vertical;
         else
         {
-            StartCoroutine(DisableByTime(0.15f));
+            StartCoroutine(DisableByTime(0.25f));
         }
     }
 
@@ -66,13 +70,13 @@ public class LinearTwisting : Twisting
     {
         if (_side == Side.Middle)
         {
-            slider.value += Mathf.Lerp((float)Side.Middle, (float)Side.Right, _speed * Time.unscaledDeltaTime);
+            slider.value += Mathf.Lerp((float)Side.Middle, (float)Side.Right, _currentSpeed * Time.unscaledDeltaTime);
             if (slider.value == (float)Side.Right)
                 _side = Side.Right;
         }
         else
         {
-            slider.value -= Mathf.Lerp((float)Side.Middle, (float)Side.Right, _speed * Time.unscaledDeltaTime);
+            slider.value -= Mathf.Lerp((float)Side.Middle, (float)Side.Right, _currentSpeed * Time.unscaledDeltaTime);
             if (slider.value == (float)Side.Middle)
                 _side = Side.Middle;
         }
@@ -85,20 +89,20 @@ public class LinearTwisting : Twisting
 
     private void TrySlowDown()
     {
-        Vector2 nearestOnScreen = GetNearest();
+        Vector2 nearestOnScreen = GetNearestOnScreen();
+        Vector2[] size = ProjectRectangle(GetNearest());
 
-        float distanceX = nearestOnScreen.x - Crosshair.position.x;
-        float distanceY = nearestOnScreen.y - Crosshair.position.y;
+        Enemy enemy = _aiming.Target.collider.GetComponentInParent<Enemy>();
 
-        if (Mathf.Abs(distanceX) < 100f && _currentSlider != _vertical)
-            _speed = Mathf.Lerp(_speed, _slowSpeed, 5f * Time.deltaTime);
-        else if (Mathf.Abs(distanceY) < 100f && _currentSlider == _vertical)
-            _speed = Mathf.Lerp(_speed, _slowSpeed, 10f * Time.deltaTime);
+        if (Crosshair.position.x > size[0].x && Crosshair.position.x < size[1].x && _currentSlider != _vertical)
+            _currentSpeed = Mathf.Lerp(_currentSpeed, _slowSpeed, 10f * Time.deltaTime);
+        else if (enemy == _nearest && Crosshair.position.y > size[2].y && Crosshair.position.y < size[3].y && _currentSlider == _vertical)
+            _currentSpeed = Mathf.Lerp(_currentSpeed, _slowSpeed, 10f * Time.deltaTime);
         else
-            _speed = Mathf.Lerp(_speed, _fastSpeed, 10f * Time.deltaTime);
+            _currentSpeed = Mathf.Lerp(_currentSpeed, _fastSpeed, 10f * Time.deltaTime);
     }
 
-    public Vector2 GetNearest()
+    public Vector2 GetNearestOnScreen()
     {
         if (_enemies == null)
             return Vector2.zero;
@@ -106,6 +110,15 @@ public class LinearTwisting : Twisting
         if (_enemies.Count < 1)
             return Vector2.zero;
 
+        _nearest = GetNearest();
+
+        //Vector3 pos = _nearest.transform.position + _nearest.transform.up * 5;
+        Vector3 pos = _nearest.GetComponent<Collider>().bounds.center;
+        return _camera.WorldToScreenPoint(pos);
+    }
+
+    public Enemy GetNearest()
+    {
         Enemy nearest = _enemies[0];
 
         for (int i = 1; i < _enemies.Count; i++)
@@ -117,7 +130,31 @@ public class LinearTwisting : Twisting
                 nearest = _enemies[i];
         }
 
-        Vector3 pos = nearest.transform.position + nearest.transform.up * 4;
-        return _camera.WorldToScreenPoint(pos);
+        return nearest;
+    }
+
+
+    public Vector2[] ProjectRectangle(Enemy sceneObject)
+    {
+        var bounds = sceneObject.GetComponent<Collider>();
+
+        Vector3 minX = bounds.bounds.min;
+        Vector3 maxX = new Vector3(bounds.bounds.max.x, bounds.bounds.min.y, bounds.bounds.max.z);
+
+        Vector3 minY = bounds.bounds.min;
+        Vector3 maxY = bounds.bounds.max;
+
+        Vector2 minXScreen = _camera.WorldToScreenPoint(minX);
+        Vector2 maxXScreen = _camera.WorldToScreenPoint(maxX);
+
+        Vector2 minYScreen = _camera.WorldToScreenPoint(minY);
+        Vector2 maxYScreen = _camera.WorldToScreenPoint(maxY);
+
+        float width = maxXScreen.x - minXScreen.x;
+        float height = maxYScreen.y - minYScreen.y;
+
+        Vector2[] size = new Vector2[4] { minXScreen, maxXScreen, minYScreen, maxYScreen };
+
+        return size;
     }
 }

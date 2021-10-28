@@ -7,7 +7,9 @@ public abstract class Twisting : MonoBehaviour
     [SerializeField] protected Player _player;
     [SerializeField] protected TouchDetection _touchDetection;
     [SerializeField] protected RectTransform _crosshair;
-    [SerializeField] protected float _speed;
+    [SerializeField] protected float _currentSpeed;
+
+    public float Speed => _currentSpeed;
 
     protected virtual void OnEnable()
     {

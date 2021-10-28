@@ -48,6 +48,12 @@ public class DeathState : State
     private void EnemyDie()
     {
         Animator.SetTrigger("Death");
+
+        for (int i = 0; i < _colliders.Length; i++)
+        {
+            _colliders[i].gameObject.layer = LayerMask.NameToLayer("Default");
+        }
+
         _rigidbody.useGravity = true;
     }
 

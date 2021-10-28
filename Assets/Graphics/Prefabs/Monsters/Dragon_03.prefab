@@ -2411,6 +2411,7 @@ GameObject:
   - component: {fileID: 5484141284846692743}
   - component: {fileID: 5484141284846692742}
   - component: {fileID: 5484141284846692737}
+  - component: {fileID: 4147812664534896074}
   m_Layer: 3
   m_Name: Dragon_03
   m_TagString: Untagged
@@ -2586,6 +2587,19 @@ MonoBehaviour:
   _transitions: []
   _deathEffect: {fileID: 0}
   _rayfire: {fileID: 7442294283292863482}
+--- !u!65 &4147812664534896074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484141284846692736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9544268, y: 2.1083946, z: 0.08876597}
+  m_Center: {x: -0.038741495, y: 0.554196, z: -0.25366193}
 --- !u!1 &5492888164432750492
 GameObject:
   m_ObjectHideFlags: 0

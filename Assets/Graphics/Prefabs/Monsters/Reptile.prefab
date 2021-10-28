@@ -8303,8 +8303,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4374157123455419378}
   m_AABB:
-    m_Center: {x: -0.013563752, y: 0.72818995, z: -0.68770635}
-    m_Extent: {x: 1.1298898, y: 1.1855893, z: 3.4971485}
+    m_Center: {x: -0.0007750988, y: 0.85675, z: -0.5664463}
+    m_Extent: {x: 1.0368516, y: 0.89828944, z: 3.3758883}
   m_DirtyAABB: 0
 --- !u!114 &8042339076841747846
 MonoBehaviour:
@@ -8674,6 +8674,7 @@ GameObject:
   - component: {fileID: 8441002037361422670}
   - component: {fileID: 8441002037361422671}
   - component: {fileID: 8441002037361422664}
+  - component: {fileID: 2170565641231997949}
   m_Layer: 3
   m_Name: Reptile
   m_TagString: Untagged
@@ -8849,6 +8850,19 @@ MonoBehaviour:
   _transitions: []
   _deathEffect: {fileID: 0}
   _rayfire: {fileID: 1680698007058461354}
+--- !u!65 &2170565641231997949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441002037361422665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8983469, y: 1.6651099, z: 0.16715336}
+  m_Center: {x: 0.07286048, y: 0.804319, z: 1.57}
 --- !u!1 &8482833119018232623
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class RandomTwisting : Twisting
         {
             _nextPosition = GetNextPosition();
         }
-        _crosshair.position = Vector3.Lerp(_crosshair.position, _nextPosition, _speed * Time.unscaledDeltaTime);
+        _crosshair.position = Vector3.Lerp(_crosshair.position, _nextPosition, _currentSpeed * Time.unscaledDeltaTime);
     }
 
     private Vector3 GetNextPosition()

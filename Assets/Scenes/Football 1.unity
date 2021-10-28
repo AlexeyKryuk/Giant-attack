@@ -915,7 +915,7 @@ GameObject:
   - component: {fileID: 37518396}
   - component: {fileID: 37518398}
   - component: {fileID: 37518397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12489,7 +12489,7 @@ GameObject:
   - component: {fileID: 205595661}
   - component: {fileID: 205595660}
   - component: {fileID: 205595659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NukeConeExplosionFire (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32317,7 +32317,7 @@ GameObject:
   - component: {fileID: 942344984}
   - component: {fileID: 942344986}
   - component: {fileID: 942344985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37719,7 +37719,7 @@ GameObject:
   - component: {fileID: 1038844947}
   - component: {fileID: 1038844949}
   - component: {fileID: 1038844948}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmokeCloudsUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42950,7 +42950,7 @@ GameObject:
   - component: {fileID: 1067225599}
   - component: {fileID: 1067225601}
   - component: {fileID: 1067225600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmokeClouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79896,7 +79896,7 @@ GameObject:
   - component: {fileID: 1692236395}
   - component: {fileID: 1692236397}
   - component: {fileID: 1692236396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84798,7 +84798,7 @@ GameObject:
   - component: {fileID: 1704975008}
   - component: {fileID: 1704975010}
   - component: {fileID: 1704975009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmokeTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91871,7 +91871,7 @@ GameObject:
   - component: {fileID: 1973357832}
   - component: {fileID: 1973357834}
   - component: {fileID: 1973357833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nova
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97426,7 +97426,7 @@ GameObject:
   - component: {fileID: 2093030325}
   - component: {fileID: 2093030327}
   - component: {fileID: 2093030326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105117,7 +105117,7 @@ GameObject:
   - component: {fileID: 8838936704666121155}
   - component: {fileID: 7162491844233817619}
   - component: {fileID: 4665199559326454411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105317,7 +105317,7 @@ GameObject:
   - component: {fileID: 4968588363167224832}
   - component: {fileID: 8261425615439689060}
   - component: {fileID: 173470635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105384,7 +105384,7 @@ GameObject:
   - component: {fileID: 2656645797081658649}
   - component: {fileID: 7809834738005944510}
   - component: {fileID: 2199156636853043527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105402,7 +105402,7 @@ GameObject:
   - component: {fileID: 8080626523690298849}
   - component: {fileID: 6577662484623840468}
   - component: {fileID: 8113368927633206822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105475,7 +105475,7 @@ GameObject:
   - component: {fileID: 2958347320634542605}
   - component: {fileID: 3603712934602473312}
   - component: {fileID: 7662213134936479705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105702,7 +105702,7 @@ GameObject:
   - component: {fileID: 869846248824380339}
   - component: {fileID: 6382158471098230667}
   - component: {fileID: 952610957586485045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105875,7 +105875,7 @@ GameObject:
   - component: {fileID: 4772789059859632899}
   - component: {fileID: 4283146421262890192}
   - component: {fileID: 2967274967566992141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105893,7 +105893,7 @@ GameObject:
   - component: {fileID: 2588757606973866988}
   - component: {fileID: 695337461024639292}
   - component: {fileID: 8761291723410490214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105911,7 +105911,7 @@ GameObject:
   - component: {fileID: 4225530877208079947}
   - component: {fileID: 8893108587093752206}
   - component: {fileID: 6448180884775457783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106210,7 +106210,7 @@ GameObject:
   - component: {fileID: 2628814328545583862}
   - component: {fileID: 1019459134246929878}
   - component: {fileID: 3534938358452112972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106315,7 +106315,7 @@ GameObject:
   - component: {fileID: 8339218582994069166}
   - component: {fileID: 4165088093191972537}
   - component: {fileID: 1194149826376242086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106435,7 +106435,7 @@ GameObject:
   - component: {fileID: 8727906773708926077}
   - component: {fileID: 3521691176273242704}
   - component: {fileID: 8954286846843117887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106453,7 +106453,7 @@ GameObject:
   - component: {fileID: 4840155144693379241}
   - component: {fileID: 8778691294055330337}
   - component: {fileID: 6416130204244121825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106617,7 +106617,7 @@ GameObject:
   - component: {fileID: 2922222290009628326}
   - component: {fileID: 8104045129209995087}
   - component: {fileID: 5562541504847852692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106635,7 +106635,7 @@ GameObject:
   - component: {fileID: 5129093985118189977}
   - component: {fileID: 2835852661213133063}
   - component: {fileID: 8488470760994922243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106785,7 +106785,7 @@ GameObject:
   - component: {fileID: 7380539025563463210}
   - component: {fileID: 8669182724959335004}
   - component: {fileID: 7385027850304771604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106803,7 +106803,7 @@ GameObject:
   - component: {fileID: 6030875853909828819}
   - component: {fileID: 1886298697086192139}
   - component: {fileID: 3568472831965737409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106821,7 +106821,7 @@ GameObject:
   - component: {fileID: 4181166226840200004}
   - component: {fileID: 9019965678894213661}
   - component: {fileID: 6980667561186838222}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107072,7 +107072,7 @@ GameObject:
   - component: {fileID: 4938977374195695144}
   - component: {fileID: 3328728850042660840}
   - component: {fileID: 1146971536151005726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107132,7 +107132,7 @@ GameObject:
   - component: {fileID: 8795225375883592921}
   - component: {fileID: 452703033428135079}
   - component: {fileID: 888025247788383969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107235,7 +107235,7 @@ GameObject:
   - component: {fileID: 3726124897638554382}
   - component: {fileID: 1173543623589133173}
   - component: {fileID: 627568022605686661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107543,7 +107543,7 @@ GameObject:
   - component: {fileID: 5908965953917458615}
   - component: {fileID: 6315444642124233091}
   - component: {fileID: 105560657952828254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107602,7 +107602,7 @@ GameObject:
   - component: {fileID: 2561753827751391040}
   - component: {fileID: 1703898773727342464}
   - component: {fileID: 6208741102675613941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107620,7 +107620,7 @@ GameObject:
   - component: {fileID: 2986818079357699897}
   - component: {fileID: 2101267144913863722}
   - component: {fileID: 5533841825147565057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107742,7 +107742,7 @@ GameObject:
   - component: {fileID: 5289166415920326951}
   - component: {fileID: 2021997325702344468}
   - component: {fileID: 1749294982821463750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107760,7 +107760,7 @@ GameObject:
   - component: {fileID: 5264814316683394158}
   - component: {fileID: 1289463075645689253}
   - component: {fileID: 4411336951514544876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107818,7 +107818,7 @@ GameObject:
   - component: {fileID: 36221622025519090}
   - component: {fileID: 381112323372350988}
   - component: {fileID: 2477479115541741260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108003,7 +108003,7 @@ GameObject:
   - component: {fileID: 8841745720020739441}
   - component: {fileID: 8091916832691515008}
   - component: {fileID: 9134250263491410816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108070,7 +108070,7 @@ GameObject:
   - component: {fileID: 2007047395674440713}
   - component: {fileID: 4824310983217823253}
   - component: {fileID: 661163471385621936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108108,7 +108108,7 @@ GameObject:
   - component: {fileID: 3902073337323078428}
   - component: {fileID: 5505864466351035168}
   - component: {fileID: 4200864825970345607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108126,7 +108126,7 @@ GameObject:
   - component: {fileID: 5482027057209796460}
   - component: {fileID: 1610777127523462146}
   - component: {fileID: 2850697932038420364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108234,7 +108234,7 @@ GameObject:
   - component: {fileID: 7883104993728910863}
   - component: {fileID: 1338167589019715463}
   - component: {fileID: 7358904691043762058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108307,7 +108307,7 @@ GameObject:
   - component: {fileID: 178222507849570747}
   - component: {fileID: 7996118487226200160}
   - component: {fileID: 9179436690667657443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108325,7 +108325,7 @@ GameObject:
   - component: {fileID: 6907869026432378019}
   - component: {fileID: 1349864948299219150}
   - component: {fileID: 6413941406471058425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108384,7 +108384,7 @@ GameObject:
   - component: {fileID: 8909339581618343208}
   - component: {fileID: 5858749523333639115}
   - component: {fileID: 8512242806953373030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108402,7 +108402,7 @@ GameObject:
   - component: {fileID: 3759280917469546621}
   - component: {fileID: 2544143642478614043}
   - component: {fileID: 1426565380516043071}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108603,7 +108603,7 @@ GameObject:
   - component: {fileID: 1055091158}
   - component: {fileID: 1055091155}
   - component: {fileID: 1055091154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108717,7 +108717,7 @@ GameObject:
   - component: {fileID: 8869968551604743617}
   - component: {fileID: 3475588966731327496}
   - component: {fileID: 2521405196997868141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108848,7 +108848,7 @@ GameObject:
   - component: {fileID: 8193753792861518622}
   - component: {fileID: 7777961002982588927}
   - component: {fileID: 5416525797851200015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108992,7 +108992,7 @@ GameObject:
   - component: {fileID: 8096893799312882919}
   - component: {fileID: 4472378806657027595}
   - component: {fileID: 84059805883708232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seating_02_blue_sh_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}

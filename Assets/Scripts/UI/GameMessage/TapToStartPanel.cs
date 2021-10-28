@@ -16,12 +16,12 @@ public class TapToStartPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        _input.Touched += OnTouch;
+        _input.TouchBegan += OnTouch;
     }
 
     private void OnDisable()
     {
-        _input.Touched -= OnTouch;
+        _input.TouchBegan -= OnTouch;
     }
 
     private void OnTouch()

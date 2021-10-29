@@ -8,8 +8,6 @@ public class HighlightHandle : MonoBehaviour
     [SerializeField] private LinearTwisting _twisting;
     [SerializeField] private Slider _gradient;
     [SerializeField] private Image _image;
-    [SerializeField] private ParticleSystem _fireEffectGradient;
-    [SerializeField] private ParticleSystem _fireEffectHandle;
 
     private Color _default;
     private Slider.Direction _direction;
@@ -31,20 +29,10 @@ public class HighlightHandle : MonoBehaviour
             if (transform.position.x > size[0].x && transform.position.x < size[1].x)
             {
                 _image.color = _gradient.GetComponentInChildren<UIGradient>().m_color1;
-                if (_fireEffectGradient != null && _fireEffectHandle != null)
-                {
-                    _fireEffectGradient.Play();
-                    _fireEffectHandle.Play();
-                }
             }
             else
             {
                 _image.color = _default;
-                if (_fireEffectGradient != null && _fireEffectHandle != null)
-                {
-                    _fireEffectGradient.Stop();
-                    _fireEffectHandle.Stop();
-                }
             }
         }
         else

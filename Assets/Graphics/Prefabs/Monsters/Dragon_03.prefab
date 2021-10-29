@@ -2529,6 +2529,7 @@ MonoBehaviour:
   - {fileID: 5484141284846692742}
   - {fileID: 5484141284846692740}
   _moveSpeed: 14
+  _offset: {x: 0, y: 0, z: 0}
 --- !u!114 &5484141284846692740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2598,8 +2599,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9544268, y: 2.1083946, z: 0.08876597}
-  m_Center: {x: -0.038741495, y: 0.554196, z: -0.25366193}
+  m_Size: {x: 1.4257609, y: 1.9533879, z: 0.08876597}
+  m_Center: {x: -0.0054675653, y: 0.6021552, z: -0.25366095}
 --- !u!1 &5492888164432750492
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class LinearTwisting : Twisting
     public RectTransform Crosshair { get => _crosshair; private set => _crosshair = value; }
     public Enemy Nearest => _nearest;
     public float FastSpeed => _fastSpeed;
+    public Slider CurrentSlider => _currentSlider;
 
     private void Awake()
     {

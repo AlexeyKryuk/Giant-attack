@@ -37,6 +37,7 @@ public class HitEffect : MonoBehaviour
     public void SetTarget(Vector3 target)
     {
         _target = target;
+        Destroy(gameObject, 5f);
     }
 
     private void SetHitEffect(Vector3 point, Transform parent, ParticleSystem effect)

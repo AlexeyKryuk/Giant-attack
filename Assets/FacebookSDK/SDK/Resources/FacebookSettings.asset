@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedAppIndex: 0
   clientTokens:
-  - 
+  - c0b3a878ba1fd677075f161aaea49148
   appIds:
   - 4752361824774372
   appLabels:
-  - App Name
+  - Giant Attack
   cookie: 1
   logging: 0
   status: 1

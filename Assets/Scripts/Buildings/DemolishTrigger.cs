@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RayFire;
 
+[RequireComponent(typeof(Collider))]
 public class DemolishTrigger : MonoBehaviour
 {
     [SerializeField] private CameraShake _camera;
@@ -10,7 +11,13 @@ public class DemolishTrigger : MonoBehaviour
     [SerializeField] private List<Tossing> _fans;
     [SerializeField] private ParticleSystem _effect;
 
+    private Collider[] _colliders;
     private bool _isTrigger;
+
+    private void Awake()
+    {
+        _colliders = GetComponents<Collider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +28,9 @@ public class DemolishTrigger : MonoBehaviour
         if (enemy != null && enemy.IsBoss)
         {
             _camera.Shake();
+
+            foreach (var col in _colliders)
+                col.enabled = false;
 
             foreach (var rf in _rayfireRigid)
                 rf.Demolish();

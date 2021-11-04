@@ -42,7 +42,7 @@ public class TrajectoryDrawing : MonoBehaviour
             lastIndex = i;
         }
         _crosshair.SetActive(true);
-        _crosshair.transform.position = _poolOfSphere[lastIndex - 2].position;
+        _crosshair.transform.position = _poolOfSphere[lastIndex].position;
 
         Vector2 scale = new Vector2(_crosshair.transform.localPosition.z / 40, _crosshair.transform.localPosition.z / 40);
         if (scale.x < 1 || scale.y < 1)

@@ -57,7 +57,6 @@ public class Player : MonoBehaviour
 
     public void OnEnemyDie(Enemy enemy)
     {
-        EnemyDied?.Invoke();
         _enemies.Remove(enemy);
 
         if (_enemies.Count < 1)
@@ -67,6 +66,8 @@ public class Player : MonoBehaviour
                 boss.gameObject.SetActive(true);
             }
         }
+
+        EnemyDied?.Invoke();
     }
 
     public void ApplyDamage(int amount)

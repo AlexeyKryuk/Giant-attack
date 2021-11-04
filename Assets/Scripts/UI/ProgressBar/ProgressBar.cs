@@ -41,12 +41,12 @@ public class ProgressBar : MonoBehaviour
 
     private void OnEnemyDie()
     {
-        _slider.value += _incrementStep;
+        _slider.DOValue(_slider.value + _incrementStep, 0.5f);
 
-        if (_slider.value == 1)
+        if (_player.Enemies.Count < 1)
         {
             _label.gameObject.SetActive(true);
             _label.rectTransform.DOShakeScale(1f, 0.5f, 5);
-        }    
+        }
     }
 }

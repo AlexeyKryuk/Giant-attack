@@ -36,7 +36,7 @@ public class AmplitudeAnalytics : MonoBehaviour
     {
         _amplitude = Amplitude.Instance;
         _amplitude.logging = true;
-        _amplitude.init("5871f7715b2a74d2ad4d9a973a7cfa79");
+        _amplitude.init("4a23fa49289913ce6e99ba5003021cd6");
 
         if (StartScene.IsStart)
             GameStart();

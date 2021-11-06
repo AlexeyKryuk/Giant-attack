@@ -168,7 +168,7 @@ PlayerSettings:
   AndroidTargetSdkVersion: 30
   AndroidPreferredInstallLocation: 1
   aotOptions: 
-  stripEngineCode: 0
+  stripEngineCode: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 0
@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: KeyStore.keystore'
+  AndroidKeystoreName: '{inproject}: Keystore/KeyStore.keystore'
   AndroidKeyaliasName: giantattack
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
